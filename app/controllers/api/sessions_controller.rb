@@ -1,5 +1,5 @@
 class Api::SessionsController < ApplicationController
-  before_action :ensure_logged_in?, only: :destroy
+  
 
   def create
     @user = User.find_by_credentials(

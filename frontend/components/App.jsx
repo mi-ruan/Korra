@@ -1,14 +1,17 @@
 import React from 'react';
 import MainContainer from './main/main_container';
-import LoginFormContainer from './session_form/login_form_container';
-import SignupFormContainer from './session_form/sign_up_form_container';
+import SessionFormContainer from './session_form/session_form_container';
 import {Route} from 'react-router-dom';
+import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
 const App = () => {
   return (
     <div>
-      <h1>Korra</h1>
-      <MainContainer />
+      <header>
+        <h1>Korra</h1>
+      </header>
+      <AuthRoute exact path="/" component={SessionFormContainer} />
+      <ProtectedRoute exact path="/main" component={MainContainer} />
     </div>
   );
 };

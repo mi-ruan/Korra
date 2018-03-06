@@ -1,7 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import LoginFormContainer from '../session_form/login_form_container';
-import SignupFormContainer from '../session_form/sign_up_form_container';
+import {Redirect} from 'react-router-dom'
 
 
 const MainIndex = ({user, logout}) => {
@@ -12,14 +10,8 @@ const MainIndex = ({user, logout}) => {
         <button onClick={() => logout()}>Logout</button>
       </div>
     )
-  } else {
-    return (
-      <div>
-        <LoginFormContainer />
-        <SignupFormContainer />
-      </div>
-    )
-  }
-}
+  } 
+
+};
 
 export default MainIndex;
