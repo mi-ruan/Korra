@@ -36,6 +36,7 @@ class SessionForm extends React.Component{
 
 
   render() {
+    // {this.addUsername}
     let errors = "";
     if (this.props.errors.session.session){
       errors = this.props.errors.session.session.map((error,idx) => {
@@ -47,7 +48,7 @@ class SessionForm extends React.Component{
       <div>
         <form onSubmit={this.props.handleSubmit}>
           <h3>{this.props.formType}</h3>
-          {this.addUsername}
+
           <label>Email:
             <input type="text" onChange={this.update("email")}
               value={this.state.email}/>
