@@ -1,6 +1,8 @@
 .session-page {
   background-image: linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5)),
   url('http://i.imgur.com/Pj5UfXy.jpg');
+  height: 100vh;
+  background-size: cover;
 }
 
 .session {
@@ -9,7 +11,7 @@
   margin: 0 auto;
   flex-wrap: wrap;
   align-items: flex-start;
-  width: 50%;
+  width: 40%;
   border: 1px solid grey;
   border-radius: 2px;
   position: relative;
@@ -25,6 +27,7 @@
   align-items: flex-start;
   align-content: flex-start;
   margin-bottom: 10px;
+  margin-right: 50px;
 }
 
 .session-form label {
@@ -32,17 +35,54 @@
 }
 
 .session-title {
+  font-family: 'Bree', serif;
   flex-direction: column;
-  color: maroon;
+  color: #BB2A27;
   font-size: 50px;
   display: flex;
   align-items: center;
   width: 80%;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-input session-submit {
+span#signup, span#login {
+  display: flex;
+  justify-content: flex-end;
+}
+
+span#signup > .session-submit ,
+span#login > .session-submit,
+.session-demo > .demo-button {
   font-weight: bold;
-  background-color: blue;
+  background-color: #9CBBD5;
+  color: white;
+  padding: 5px;
+}
+
+.session-errors {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  color: red;
+}
+
+.session-errors > li {
+  margin: 0 auto;
+}
+
+.session-demo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 7px;
+}
+
+.session-demo > .demo-button {
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-bottom: 10px;
 }
 
 .session-form input {
