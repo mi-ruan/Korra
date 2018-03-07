@@ -9,6 +9,10 @@ header.nav-bar {
   background: white;
   border-top: 3px solid lightgrey;
   border-bottom: 3px solid lightgrey;
+  height: 40px;
+  display: flex;
+  align-items: center;
+
 }
 
 nav.full-nav {
@@ -16,17 +20,16 @@ nav.full-nav {
   width: 60%;
   justify-content: space-between;
   margin: 0 auto;
-  width: 650px;
   font-family: 'Noto', serif;
   font-weight: 500;
   font-size: 25px;
-  align-items: flex-end;
+  align-items: center;
 }
 
 
 nav.left-nav {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .title {
@@ -34,17 +37,38 @@ nav.left-nav {
   margin-right: 50px;
 }
 
-.tabs {
+[class^="tabs-"] {
   font-size: 20px;
-  margin-right: 30px;
+  margin-right: 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
 
-.tabs:hover {
-  background-color: lightgrey;
+.fa-newspaper:before {
+  content: "\f1ea";
+  margin-right: 10px;
+}
+
+.selected {
+  color: #BB2A27;
+  border-bottom: 3px solid #BB2A27;
+}
+
+.question-search {
+  border: 2px solid lightgrey;
+  margin-right: 30px;
+  width: 300px;
+  height: 20px;
 }
 
 
 nav.right-nav {
   display: flex;
-  font-size: 20px;
+  font-size: 15px;
+  margin-right: 30px;
+}
+
+.logout-button:hover {
+  color: #BB2A27;
 }

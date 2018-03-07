@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 
 
 const MainIndex = ({user, logout}) => {
@@ -10,11 +10,14 @@ const MainIndex = ({user, logout}) => {
           <nav className="full-nav">
             <nav className ="left-nav">
               <Link to="/" className="title" >Korra</Link>
-              <Link to="/" className="tabs-home" >Home</Link>
-              <Link to="/" className="tabs-answer" >Answer</Link>
+              <NavLink to="/"
+                activeClassName="selected"
+                className="tabs-home fas fa-newspaper ">Home</NavLink>
             </nav>
             <nav className="right-nav">
-              <button onClick={() => logout()}>Logout</button>
+              <input type="text" className="question-search"
+                placeholder={`\uD83D\uDD0D Search Quora`}></input>
+              <button className="logout-button" onClick={() => logout()}>Logout</button>
             </nav>
           </nav>
         </header>
@@ -23,7 +26,7 @@ const MainIndex = ({user, logout}) => {
       </div>
     )
   }
-
 };
+// <NavLink to="/answer" className="tabs-answer" activeClassName="selected" >Answer</NavLink>
 
 export default MainIndex;
