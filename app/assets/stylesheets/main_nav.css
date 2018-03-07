@@ -12,7 +12,6 @@ header.nav-bar {
   height: 40px;
   display: flex;
   align-items: center;
-
 }
 
 nav.full-nav {
@@ -35,6 +34,7 @@ nav.left-nav {
 .title {
   color: #BB2A27;
   margin-right: 50px;
+  font-weight: 550;
 }
 
 [class^="tabs-"] {
