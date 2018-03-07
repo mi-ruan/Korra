@@ -1,0 +1,56 @@
+.session-page {
+  background-image: linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5)),
+  url('http://i.imgur.com/Pj5UfXy.jpg');
+}
+
+.session {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 50%;
+  border: 1px solid grey;
+  border-radius: 2px;
+  position: relative;
+  top: 100px;
+  background-color: white;
+}
+
+.session-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 25%;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.session-form label {
+  color: #aaa;
+}
+
+.session-title {
+  flex-direction: column;
+  color: maroon;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+input session-submit {
+  font-weight: bold;
+  background-color: blue;
+}
+
+.session-form input {
+  display: flex;
+  border: 1px solid grey;
+  padding: 1px;
+  margin: 5px;
+  background: lightgray;
+  border-radius: 5px;
+  color: black;
+}
