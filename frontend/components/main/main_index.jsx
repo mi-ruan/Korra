@@ -17,7 +17,7 @@ const MainIndex = ({user, logout}) => {
             <nav className="right-nav">
               <input type="text" className="question-search"
                 placeholder={`\uD83D\uDD0D Search Quora`}></input>
-              <button className="logout-button" onClick={() => logout()}>Logout</button>
+              <button className="logout-button" onClick={() => logout()}>Log Out</button>
             </nav>
           </nav>
         </header>

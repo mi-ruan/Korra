@@ -4,10 +4,8 @@
 
 
 header.nav-bar {
-  position: relative;
   top: 10px;
   background: white;
-  border-top: 3px solid lightgrey;
   border-bottom: 3px solid lightgrey;
   height: 40px;
   display: flex;
@@ -67,8 +65,14 @@ nav.right-nav {
   display: flex;
   font-size: 15px;
   margin-right: 30px;
+  align-items: center;
+}
+
+.logout-button {
+  padding: 12px;
 }
 
 .logout-button:hover {
   color: #BB2A27;
+  background: lightgrey;
 }
