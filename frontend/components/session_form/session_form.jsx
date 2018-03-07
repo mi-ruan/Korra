@@ -25,7 +25,7 @@ class SessionForm extends React.Component{
 
   addUsername() {
     if(this.props.formType === "Sign Up") {
-      return (<label>Username:
+      return (<label>USERNAME
         <input type="text" onChange={this.update("username")}
           value={this.state.username}/>
       </label>
@@ -33,33 +33,31 @@ class SessionForm extends React.Component{
     }
   }
 
-
-
   render() {
     let errors = "";
-    if (this.props.errors.session.session){
-      errors = this.props.errors.session.session.map((error,idx) => {
+    if (this.props.errors.session){
+      errors = this.props.errors.session.map((error,idx) => {
         return (<li key={idx}>{error}</li>);
       });
     }
 
     return (
-      <div>
+      <div className ="session-form">
         <form onSubmit={this.handleSubmit}>
-          <h3>{this.props.formType}</h3>
+          <h3 className="session-type">{this.props.formType}</h3>
           {this.addUsername()}
-          <label>Email:
+          <label>EMAIL
             <input type="text" onChange={this.update("email")}
               value={this.state.email}/>
           </label>
-          <label>Password:
+          <label>PASSWORD
             <input type="password" onChange={this.update("password")}
               value={this.state.password}/>
           </label>
-          <br /> <br />
-          <input type="submit" value={this.props.formType} />
+          <br />
+          <input className="session-submit" type="submit" value={this.props.formType} />
         </form>
-        <ul>
+        <ul className="session-errors">
           {errors}
         </ul>
       </div>

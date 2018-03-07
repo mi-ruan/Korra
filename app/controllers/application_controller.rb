@@ -1,8 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-<<<<<<< HEAD
-=======
-
   helper_method :current_user, :logged_in?
 
   def current_user
@@ -24,5 +21,4 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
   end
 
->>>>>>> a6281fa52fc102f3d932dfe9a2acb10af201e194
 end

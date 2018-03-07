@@ -6,12 +6,9 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
 const App = () => {
   return (
-    <div>
-      <header>
-        <h1>Korra</h1>
-      </header>
-      <AuthRoute exact path="/" component={SessionFormContainer} />
-      <ProtectedRoute exact path="/main" component={MainContainer} />
+    <div id="App">
+      <AuthRoute exact path="/session" component={SessionFormContainer} />
+      <ProtectedRoute exact path="/" component={MainContainer} />
     </div>
   );
 };
