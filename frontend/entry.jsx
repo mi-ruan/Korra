@@ -6,13 +6,22 @@ import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
-  if (window.currentUser) {
-  const preloadedState = { session: { currentUser: window.currentUser } };
-  store = configureStore(preloadedState);
-  delete window.currentUser;
-} else {
-  store = configureStore();
-}
+  const currentUser = window.currentUser;
+  if (currentUser) {
+    const { id, username } = currentUser;
+    const preloadedState = {
+      session: { id },
+      entities: {
+        users: { [id]: currentUser }
+      },
+    };
+    store = configureStore(preloadedState);
+    window.currentUser = null;
+  } else {
+    store = configureStore();
+  }
+
+
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   const root = document.getElementById('root');

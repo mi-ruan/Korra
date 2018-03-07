@@ -31,7 +31,7 @@ export const login = user => {
         errors => dispatch(receiveErrors(errors.responseJSON.errors)))
       );
     }
-  )
+  );
 };
 export const logout = () => dispatch => {
   return (APIUtil.logout()
