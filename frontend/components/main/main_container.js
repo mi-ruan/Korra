@@ -3,7 +3,7 @@ import MainIndex from './main_index';
 import {logout} from '../../actions/session_actions';
 
 const mapStateToProps = state => {
-  return {user: state.session.currentUser || {}};
+  return {users: state.entities.users || {}};
 };
 
 const mapDispatchToProps = dispatch => {

@@ -8,6 +8,6 @@
 
 questions = Question.create([
   { title: 'How is Korra made?', user_id: 2 },
-  { title: 'Why is faker so good?', user_id: 3},
+  { title: 'Why is faker so good?', user_id: 1},
   { title: 'Why is CSS so difficult?', user_id: 2}
   ])

@@ -2,7 +2,6 @@
   background: #FAFAFA;
 }
 
-
 header.nav-bar {
   top: 10px;
   background: white;
@@ -22,7 +21,6 @@ nav.full-nav {
   font-size: 25px;
   align-items: center;
 }
-
 
 nav.left-nav {
   display: flex;
@@ -60,6 +58,10 @@ nav.left-nav {
   height: 20px;
 }
 
+.question-search::placeholder {
+  font-family: Arial;
+  color: #858585;
+}
 
 nav.right-nav {
   display: flex;
@@ -70,6 +72,9 @@ nav.right-nav {
 
 .logout-button {
   padding: 12px;
+  font-family: 'Bree', serif;
+  font-size: 16px;
+  color: #584848;
 }
 
 .logout-button:hover {
