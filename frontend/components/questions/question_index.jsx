@@ -12,8 +12,13 @@ class QuestionIndex extends React.Component {
 
   render() {
     const QuestionItems = this.props.questions.map((question, idx) => {
-      return (<QuestionItem key={idx} question={question}/>);
-    })
+      const user = this.props.users[question.user_id];
+      return (<QuestionItem key={idx}
+        question={question}
+        user={user}
+        session={this.props.session}
+        location="index"/>);
+    });
     return(
       <div className="main-questions">
         <ul>
