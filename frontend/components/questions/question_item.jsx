@@ -1,11 +1,12 @@
 import React from 'react';
-import {Link, matchPath} from 'react-router-dom';
+import {Link, matchPath, withRouter} from 'react-router-dom';
 
 class QuestionItem extends React.Component {
   constructor(props){
     super(props);
     this.addEditForm = this.addEditForm.bind(this);
     this.addDeleteButton = this.addDeleteButton.bind(this);
+    this.fnDeleteQuestion = this.fnDeleteQuestion.bind(this);
   }
 
   // this is placeholder for edit form modal
@@ -13,6 +14,12 @@ class QuestionItem extends React.Component {
     if(this.props.currentUserQuestion) {
       return(<button className="question-edit">Edit</button>);
     }
+  }
+
+
+  fnDeleteQuestion() {
+    this.props.deleteQuestion(this.props.question.id)
+      .then(() => this.props.history.push('/'));
   }
 
   addDeleteButton(){
@@ -24,11 +31,10 @@ class QuestionItem extends React.Component {
     if(this.props.currentUserQuestion &&
       isQuestionShow){
       return (<button className="question-delete"
-        onClick={()=> this.props.deleteQuestion(this.props.question.id)}
+        onClick={this.fnDeleteQuestion}
         >Delete</button>);
     }
   }
-
 
   render() {
     return(
@@ -45,4 +51,4 @@ class QuestionItem extends React.Component {
   }
 }
 
-export default QuestionItem;
+export default withRouter(QuestionItem);

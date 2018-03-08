@@ -21,7 +21,8 @@ class QuestionCreate extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input className="question-create-form" placeholder="What is your question?"
+          <input className="question-create-form"
+            placeholder="What is your question?"
             onChange={this.updateTitle} value={this.state.title} />
         </form>
     </div>

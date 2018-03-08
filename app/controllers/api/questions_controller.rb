@@ -34,9 +34,9 @@ class Api::QuestionsController < ApplicationController
     @question = current_user.questions.find(params[:id])
     if @question
       Question.delete(@question)
-      render 'api/users/show'
+      render json: {}
     else
-      render :show
+      render json: {}, status: 404
     end
   end
 

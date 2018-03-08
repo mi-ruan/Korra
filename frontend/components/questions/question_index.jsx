@@ -22,7 +22,8 @@ class QuestionIndex extends React.Component {
     return(
       <div className="main-questions">
         <div className="question-create">
-          <h5 className="main-current-user">{this.props.users[this.props.session].username}</h5>
+          <h5 className="main-current-user">
+            {this.props.users[this.props.session].username}</h5>
           <QuestionCreateContainer />
         </div>
         <ul>

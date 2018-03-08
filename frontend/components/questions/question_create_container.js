@@ -2,7 +2,6 @@ import {connect} from 'react-redux';
 import QuestionCreate from './question_create';
 import {createQuestion} from '../../actions/question_actions';
 
-
 const mapStateToProps = state => {
   return {
     question: {
@@ -14,7 +13,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createQuestion: (question) => dispatch(createQuestion(question))
+    createQuestion: (question) => dispatch(createQuestion(question)),
   };
 };
 
