@@ -14,11 +14,18 @@ class QuestionShow extends React.Component {
     if (this.props.question === undefined) {
       return <div></div>;
     }
+    const {question, user, currentUserId,
+      fetchQuestion, updateQuestion, deleteQuestion} = this.props;
     return(
       <div className="question-show-form">
-        <QuestionItem question={this.props.question}
-          user={this.props.user} session={this.props.session}
-          location="question_show"/>
+        <QuestionItem
+          question={question}
+          user={user}
+          currentUserQuestion= {currentUserId === user.id}
+          fetchQuestion = {fetchQuestion}
+          updateQuestion = {updateQuestion}
+          deleteQuestion = {deleteQuestion}
+          />
       </div>
     );
   }

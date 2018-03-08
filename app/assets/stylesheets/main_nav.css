@@ -14,6 +14,7 @@ header.nav-bar {
 nav.full-nav {
   display: flex;
   width: 60%;
+  min-width: 60%;
   justify-content: space-between;
   margin: 0 auto;
   font-family: 'Noto', serif;
@@ -71,10 +72,12 @@ nav.right-nav {
 }
 
 .logout-button {
-  padding: 12px;
   font-family: 'Bree', serif;
   font-size: 16px;
   color: #584848;
+  border-radius: 5px;
+  padding: 2px;
+  text-align: center;
 }
 
 .logout-button:hover {

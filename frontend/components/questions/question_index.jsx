@@ -1,5 +1,6 @@
 import React from 'react';
 import QuestionItem from './question_item';
+import QuestionCreateContainer from './question_create_container';
 
 class QuestionIndex extends React.Component {
   constructor(props){
@@ -16,11 +17,14 @@ class QuestionIndex extends React.Component {
       return (<QuestionItem key={idx}
         question={question}
         user={user}
-        session={this.props.session}
-        location="index"/>);
+        currentUserQuestion={this.props.currentUserId === user.id}/>);
     });
     return(
       <div className="main-questions">
+        <div className="question-create">
+          <h5 className="main-current-user">{this.props.users[this.props.session].username}</h5>
+          <QuestionCreateContainer />
+        </div>
         <ul>
           {QuestionItems}
         </ul>

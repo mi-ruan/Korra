@@ -1,13 +1,16 @@
 import {connect} from 'react-redux';
 import QuestionShow from './question_show';
-import {getselectedUser} from '../../reducers/selectors';
-import {fetchQuestion} from '../../actions/question_actions';
+import {getSelectedUser} from '../../reducers/selectors';
+import {fetchQuestion, updateQuestion, deleteQuestion} from '../../actions/question_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  const question = state.entities.questions[ownProps.match.params.questionId];
+  const userId = question && question.user_id;
+  const user = getSelectedUser(state, userId);
   return {
-    question: state.entities.questions[ownProps.match.params.questionId],
-    user: getselectedUser(state.entities, ownProps.match.params.questionId),
-    session: state.session.id
+    question,
+    user,
+    currentUserId: state.session.id
   };
 };
 

@@ -45,7 +45,7 @@ export const fetchQuestion = (id) => {
 export const createQuestion = (question) => {
   return (
     dispatch => {
-      return (QuestionApiUtil.createQuestions(question)
+      return (QuestionApiUtil.createQuestion(question)
       .then(question => dispatch(receiveQuestion(question)))
     );
   });
@@ -53,7 +53,7 @@ export const createQuestion = (question) => {
 export const updateQuestion = (question) => {
   return (
     dispatch => {
-      return (QuestionApiUtil.updateQuestions(question)
+      return (QuestionApiUtil.updateQuestion(question)
       .then(question => dispatch(receiveQuestions(question)))
     );
   });
