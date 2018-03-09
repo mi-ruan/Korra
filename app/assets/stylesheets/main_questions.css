@@ -65,8 +65,8 @@
   flex-direction: row;
   justify-content: flex-end;
   margin: 5px;
-
 }
+
 
 .question-edit {
   display: flex;
@@ -78,4 +78,14 @@
   display: flex;
   font-size: 12px;
   width: 30px;
+}
+
+.question-edit:hover {
+  text-decoration: underline;
+  color: #3E78AD;
+}
+
+.question-delete:hover {
+  text-decoration: underline;
+  color: #3E78AD;
 }

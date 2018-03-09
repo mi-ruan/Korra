@@ -15,7 +15,7 @@ class QuestionShow extends React.Component {
       return <div></div>;
     }
     const {question, user, currentUserId,
-      fetchQuestion, updateQuestion, deleteQuestion} = this.props;
+      fetchQuestion, updateQuestion, deleteQuestion, openModal} = this.props;
     return(
       <div className="question-show-form">
         <QuestionItem
@@ -25,6 +25,7 @@ class QuestionShow extends React.Component {
           fetchQuestion = {fetchQuestion}
           updateQuestion = {updateQuestion}
           deleteQuestion = {deleteQuestion}
+          openModal = {openModal}
           />
       </div>
     );

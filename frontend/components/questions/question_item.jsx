@@ -1,18 +1,20 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 
+
 class QuestionItem extends React.Component {
   constructor(props){
     super(props);
-    this.addEditForm = this.addEditForm.bind(this);
+    this.addEditButton = this.addEditButton.bind(this);
     this.addDeleteButton = this.addDeleteButton.bind(this);
     this.fnDeleteQuestion = this.fnDeleteQuestion.bind(this);
   }
 
-  // this is placeholder for edit form modal
-  addEditForm(){
+  addEditButton(){
     if(this.props.currentUserQuestion) {
-      return(<button className="question-edit">Edit</button>);
+      return(<button className="question-edit"
+      onClick={() => this.props.openModal('updateForm', this.props.question.id)}>
+      Edit</button>);
     }
   }
 
@@ -23,8 +25,8 @@ class QuestionItem extends React.Component {
 
   addDeleteButton(){
     const isQuestionShow =
-    (this.props.location.pathname
-      === `/questions/${this.props.question.id}`);
+    (this.props.location.pathname ===
+      `/questions/${this.props.question.id}`);
     if(this.props.currentUserQuestion &&
       isQuestionShow){
       return (<button className="question-delete"
@@ -40,7 +42,7 @@ class QuestionItem extends React.Component {
           className="question-title">{this.props.question.title}</Link>
         <h6 className="question-author">Author's Username: {this.props.user.username}</h6>
         <span className="edit-delete">
-          {this.addEditForm()}
+          {this.addEditButton()}
           {this.addDeleteButton()}
         </span>
       </div>

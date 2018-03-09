@@ -6,10 +6,12 @@ import QuestionCreateContainer from './question_create_container';
 class QuestionIndex extends React.Component {
   constructor(props){
     super(props);
+    // this.reverseQuestion = this.props.questions.reverse();
   }
 
   componentDidMount(){
-    this.props.fetchQuestions();
+   this.props.fetchQuestions();
+   // this.reverseQuestion = this.props.questions.reverse();
   }
 
   render() {
@@ -18,7 +20,9 @@ class QuestionIndex extends React.Component {
       return (<QuestionItem key={idx}
         question={question}
         user={user}
-        currentUserQuestion={this.props.currentUserId === user.id}/>);
+        currentUserQuestion={this.props.currentUserId === user.id}
+        openModal={this.props.openModal}/>
+        );
     });
     return(
       <div className="main-questions">
@@ -26,7 +30,7 @@ class QuestionIndex extends React.Component {
           <h5 className="main-current-user">
             {this.props.users[this.props.currentUserId].username}</h5>
           <form>
-            <input className="question-create-form"
+            <textarea className="question-create-form"
               placeholder="What is your question?"
               onClick={() => this.props.openModal('createForm')} />
           </form>

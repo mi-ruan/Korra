@@ -16,10 +16,12 @@
   font-size: 20px;
 }
 
-input.question-create-form {
+textarea.question-create-form {
   margin-left: 15px;
-  width: 100%;
-  font-weight: bold;
+  width: 75%;
+  height: 30%;
+  overflow-wrap: break-word;
+  resize: none;
 }
 
 .question-create-form:placeholder {
@@ -36,11 +38,12 @@ input.question-create-form {
   z-index: 3;
   background: white;
   display: flex;
-  height: 40%;
-  width: 50%;
+  height: 300px;
+  width: 700px;
   border-radius: 5px;
   border: 1px solid grey;
   font-weight: bolder;
+  align-items: center;
 }
 
 .modal-background {
@@ -86,9 +89,32 @@ input.question-create-form {
   right: 10px;
 }
 
+.add-question-button-create:hover{
+  border: 2px solid #1A63AD;
+}
+
 .add-question-button-nav {
   border: 1px solid #6C1B17;
   background: #B92B27;
   margin: 15px;
+}
+.add-question-button-nav:hover{
+  border: 2px solid #6C1B17;
+}
 
+.cancel-button {
+  position: absolute;
+  right: 150px;
+  font-size: 14px;
+  bottom: 0px;
+}
+.cancel-button:hover {
+  text-decoration: underline;
+  color: #B92B27;
+  cursor: pointer;
+}
+
+span.update-buttons {
+  display: flex;
+  align-items: center;
 }

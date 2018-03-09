@@ -2,9 +2,9 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import QuestionCreateContainer from '../questions/question_create_container';
+import QuestionUpdateContainer from '../questions/question_update_container';
 
-
-function Modal({modal, closeModal}) {
+function Modal({modal, closeModal, modalId}) {
   if (!modal) {
     return null;
   }
@@ -12,6 +12,9 @@ function Modal({modal, closeModal}) {
   switch (modal) {
     case 'createForm':
       component = <QuestionCreateContainer />;
+      break;
+    case 'updateForm':
+      component = <QuestionUpdateContainer question={{id:modalId}} />;
       break;
     default:
       return null;
@@ -27,7 +30,8 @@ function Modal({modal, closeModal}) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal.type,
+    modalId: state.ui.modal.id
   };
 };
 

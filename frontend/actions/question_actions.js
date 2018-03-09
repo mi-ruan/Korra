@@ -54,7 +54,7 @@ export const updateQuestion = (question) => {
   return (
     dispatch => {
       return (QuestionApiUtil.updateQuestion(question)
-      .then(question => dispatch(receiveQuestions(question)))
+      .then(question => dispatch(receiveQuestion(question)))
     );
   });
 };
