@@ -2,6 +2,7 @@ import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import AnswerFormContainer from '../answers/answer_form_container';
 
+
 class QuestionItem extends React.Component {
   constructor(props){
     super(props);
@@ -51,12 +52,13 @@ class QuestionItem extends React.Component {
 
   render() {
     return(
-      <div className="main-question-form">
+      [<div key='a' className="main-question-form">
         <Link to={`/questions/${this.props.question.id}`}
           className="question-title">{this.props.question.title}</Link>
         <h6 className="question-author">Author's Username: {this.props.user.username}</h6>
         <span className="create-form-footer">
-          <div className="answer-button" onClick={this.addAnswerConditional}>
+          <div className="answer-button"
+            onClick={() => this.props.openModal('answerForm', this.props.question.id)}>
             <button className="fas fa-pencil-alt">Answer</button>
           </div>
           <span className="edit-delete">
@@ -65,7 +67,11 @@ class QuestionItem extends React.Component {
           </span>
         </span>
         {this.addAnswerForm()}
+      </div>,
+      <div key='x' className='b'>
+        {true && <div className='c'></div>}
       </div>
+    ]
     );
   }
 }

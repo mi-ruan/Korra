@@ -1,13 +1,11 @@
 import {connect} from 'react-redux';
 import ActionForm from './answer_form';
 import {createAnswer, updateAnswer, deleteAnswer} from '../../actions/answer_actions';
-
+import {closeModal} from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return ({
-    user: state.entities.users[ownProps.match.params.user.id],
-    question: state.entities.questions[ownProps.match.params.question.id]
+    question: state.entities.users[ownProps.question.id],
   });
 };
 

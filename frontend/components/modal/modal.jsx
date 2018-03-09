@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import QuestionCreateContainer from '../questions/question_create_container';
 import QuestionUpdateContainer from '../questions/question_update_container';
+import AnswerFormContainer from '../answers/answer_form_container';
 
 function Modal({modal, closeModal, modalId}) {
   if (!modal) {
@@ -14,7 +15,10 @@ function Modal({modal, closeModal, modalId}) {
       component = <QuestionCreateContainer />;
       break;
     case 'updateForm':
-      component = <QuestionUpdateContainer question={{id:modalId}} />;
+      component = <QuestionUpdateContainer question={{id: modalId}} />;
+      break;
+    case 'answerForm':
+      component = <AnswerFormContainer question={{id: modalId}} />;
       break;
     default:
       return null;
