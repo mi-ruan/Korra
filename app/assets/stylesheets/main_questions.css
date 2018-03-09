@@ -17,12 +17,14 @@
   background: white;
   border: 2px solid lightgrey;
   padding: 5px;
-  margin: 2px 0px;
+  margin: 1px 0px;
   flex-direction: column;
 }
 
 .main-current-user {
-  margin: 5px;
+  font-family: 'Noto', serif;
+  margin: 0 15px;
+  font-weight: 500;
 }
 
 .main-questions > ul {
@@ -39,7 +41,7 @@
 
 .question-title {
   display: flex;
-  margin: auto 0;
+  margin: 0 10px;
   font-family: 'Bree', serif;
   font-weight: bold;
 }
@@ -49,8 +51,9 @@
 
 .question-author{
   display: flex;
-  margin: auto 0;
+  margin: 0 10px;
   font-size: 12px;
+  font-weight: 500;
 }
 
 .question-show-form > .main-question-form > .question-author {

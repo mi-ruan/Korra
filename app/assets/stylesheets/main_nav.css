@@ -13,7 +13,7 @@ header.nav-bar {
 
 nav.full-nav {
   display: flex;
-  width: 60%;
+  width: 70%;
   min-width: 60%;
   justify-content: space-between;
   margin: 0 auto;
@@ -37,7 +37,7 @@ nav.left-nav {
 [class^="tabs-"] {
   font-size: 20px;
   margin-right: 20px;
-  height: 40px;
+  height: 42px;
   display: flex;
   align-items: center;
 }
@@ -83,4 +83,5 @@ nav.right-nav {
 .logout-button:hover {
   color: #BB2A27;
   background: lightgrey;
+  box-shadow: 4 4 0 0 black;
 }

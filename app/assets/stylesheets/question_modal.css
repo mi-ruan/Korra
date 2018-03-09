@@ -1,3 +1,9 @@
+.main-questions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .question-create {
   display: flex;
   flex-direction: column;
@@ -6,15 +12,83 @@
   border: 2px solid lightgrey;
   margin: 2px;
   height: 60px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
 }
 
 input.question-create-form {
-  margin-left: 5px;
+  margin-left: 15px;
   width: 100%;
+  font-weight: bold;
 }
 
-
-input.question-create-form:placeholder {
-  font-weight: bold;
+.question-create-form:placeholder {
   color: grey;
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+}
+
+.question-create-form-modal {
+  position: absolute;
+  z-index: 3;
+  background: white;
+  display: flex;
+  height: 40%;
+  width: 50%;
+  border-radius: 5px;
+  border: 1px solid grey;
+  font-weight: bolder;
+}
+
+.modal-background {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.closeX {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  font-family: sans-serif;
+  color: grey;
+}
+
+.closeX:hover {
+  color: #2B6DAD;
+}
+
+[class^="add-question-button"] {
+  color: white;
+  height: 30px;
+  font-size: 14px;
+  text-align: center;
+  width: 100px;
+  border-radius: 3px;
+  font-family: Arial;
+}
+
+.add-question-button-create {
+  border: 1px solid #1A63AD;
+  background: #3E78AD;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.add-question-button-nav {
+  border: 1px solid #6C1B17;
+  background: #B92B27;
+  margin: 15px;
+
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import QuestionCreateModalContainer from '../questions/question_create_modal_container';
+import QuestionCreateContainer from '../questions/question_create_container';
 
 
 function Modal({modal, closeModal}) {
@@ -11,7 +11,7 @@ function Modal({modal, closeModal}) {
   let component;
   switch (modal) {
     case 'createForm':
-      component = <QuestionCreateModalContainer />;
+      component = <QuestionCreateContainer />;
       break;
     default:
       return null;

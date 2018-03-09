@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, matchPath, withRouter} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 class QuestionItem extends React.Component {
   constructor(props){
@@ -16,18 +16,15 @@ class QuestionItem extends React.Component {
     }
   }
 
-
   fnDeleteQuestion() {
     this.props.deleteQuestion(this.props.question.id)
       .then(() => this.props.history.push('/'));
   }
 
   addDeleteButton(){
-    const isQuestionShow = matchPath(`/questions/${this.props.question.id}`,{
-      path: '/questions/:questionId',
-      exact: true,
-      strict: false
-    });
+    const isQuestionShow =
+    (this.props.location.pathname
+      === `/questions/${this.props.question.id}`);
     if(this.props.currentUserQuestion &&
       isQuestionShow){
       return (<button className="question-delete"

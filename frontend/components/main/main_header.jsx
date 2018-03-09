@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
+import {openModal} from '../../actions/modal_actions';
 
 const mainHeader = ({logout}) => {
   return (
@@ -15,6 +16,8 @@ const mainHeader = ({logout}) => {
           <input type="text" className="question-search"
             placeholder={`\uD83D\uDD0D Search Quora`}></input>
           <button className="logout-button" onClick={() => logout()}>Log Out</button>
+          <button className="add-question-button-nav"
+          onClick={() => dispatch(openModal('createForm'))}>Add Question</button>
         </nav>
       </nav>
     </header>

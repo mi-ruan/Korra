@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import QuestionCreate from './question_create';
 import {createQuestion} from '../../actions/question_actions';
+import {closeModal} from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
   return {
@@ -14,6 +15,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     createQuestion: (question) => dispatch(createQuestion(question)),
+    closeModal: () => dispatch(closeModal())
   };
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import QuestionItem from './question_item';
 import QuestionCreateContainer from './question_create_container';
 
+
 class QuestionIndex extends React.Component {
   constructor(props){
     super(props);
@@ -23,8 +24,12 @@ class QuestionIndex extends React.Component {
       <div className="main-questions">
         <div className="question-create">
           <h5 className="main-current-user">
-            {this.props.users[this.props.session].username}</h5>
-          <QuestionCreateContainer />
+            {this.props.users[this.props.currentUserId].username}</h5>
+          <form>
+            <input className="question-create-form"
+              placeholder="What is your question?"
+              onClick={() => this.props.openModal('createForm')} />
+          </form>
         </div>
         <ul>
           {QuestionItems}

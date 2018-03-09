@@ -12,6 +12,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   min-width: 40%;
+  width: 40%;
   border: 1px solid grey;
   border-radius: 2px;
   position: relative;

@@ -14,18 +14,20 @@ class QuestionCreate extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.createQuestion(this.state);
+    this.props.createQuestion(this.state).then(this.props.closeModal);
   }
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="modal-container">
+        <form onSubmit={this.handleSubmit} className="question-create-form-modal">
           <input className="question-create-form"
-            placeholder="What is your question?"
+            placeholder="Start your question with 'What', 'How' and 'Why', etc."
             onChange={this.updateTitle} value={this.state.title} />
+          <div onClick={this.props.closeModal} className="closeX">X</div>
+          <button className="add-question-button-create">Add Question</button>
         </form>
-    </div>
+      </div>
     );
   }
 }
