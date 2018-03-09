@@ -10,7 +10,7 @@ const mainHeader = ({logout}) => {
           <Link to="/" className="title" >Korra</Link>
           <NavLink exact to="/"
             activeClassName="selected"
-            className="tabs-home fas fa-newspaper ">Home</NavLink>
+            className="tabs-home fas fa-newspaper">Home</NavLink>
         </nav>
         <nav className="right-nav">
           <input type="text" className="question-search"

@@ -1,0 +1,20 @@
+.create-form-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.answer-button {
+  background: #F1F8FB;
+  color: #5D88B8;
+  border: 1px solid #BCCADC;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 12px;
+  padding: 3px;
+  font-family: 'Open Sans', sans-serif;
+  align-content: center;
+}
+
+.answer-button:hover {
+  border: 1px solid #5D88D8;
+}

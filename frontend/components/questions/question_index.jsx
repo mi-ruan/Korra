@@ -6,12 +6,10 @@ import QuestionCreateContainer from './question_create_container';
 class QuestionIndex extends React.Component {
   constructor(props){
     super(props);
-    // this.reverseQuestion = this.props.questions.reverse();
   }
 
   componentDidMount(){
    this.props.fetchQuestions();
-   // this.reverseQuestion = this.props.questions.reverse();
   }
 
   render() {
@@ -32,7 +30,8 @@ class QuestionIndex extends React.Component {
           <form>
             <textarea className="question-create-form"
               placeholder="What is your question?"
-              onClick={() => this.props.openModal('createForm')} />
+              onClick={() => this.props.openModal('createForm')}
+              value="" />
           </form>
         </div>
         <ul>
