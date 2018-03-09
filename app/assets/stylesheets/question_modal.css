@@ -20,6 +20,8 @@ textarea.question-create-form {
   margin-left: 15px;
   width: 75%;
   height: 30%;
+  font-size: 20px;
+  font-weight: bold;
   overflow-wrap: break-word;
   resize: none;
 }

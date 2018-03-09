@@ -3,7 +3,7 @@ class Api::QuestionsController < ApplicationController
   before_action :require_logged_in, only: [:create]
 
   def index
-    @questions = Question.all
+    @questions = Question.all.order(updated_at: :desc)
     render :index
   end
 

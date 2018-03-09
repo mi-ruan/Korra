@@ -6,7 +6,8 @@ import { openModal } from '../../actions/modal_actions';
 const mapStateToProps = state => {
   return {
     users: Object.assign({}, state.entities.users),
-    questions: Object.values(state.entities.questions),
+    questions: Object.values(state.entities.questions)
+    .sort((a,b) => new Date(b.updated_at) > new Date(a.updated_at)),
     currentUserId: state.session.id
   };
 };
