@@ -31,6 +31,7 @@ class Api::AnswersController < ApplicationController
       render json: {}
     else
       render json: {}, status: 404
+    end
   end
 
   private
