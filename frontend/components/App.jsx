@@ -3,7 +3,8 @@ import MainContainer from './main/main_container';
 import SessionFormContainer from './session_form/session_form_container';
 import {Route} from 'react-router-dom';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
-import Modal from './modal/modal';
+import Modal from './user_interface/modal';
+
 
 const App = () => {
   return (

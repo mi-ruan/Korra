@@ -19,4 +19,20 @@
   border: 1px solid #5D88D8;
 }
 
-.modal-background {}
+.answer-form{
+  display: flex;
+  position: relative;
+  height: 200px;
+  background: white;
+  border: 2px solid lightgrey;
+  padding: 5px;
+  margin: 1px 0px;
+}
+
+.answer-form-text {
+  resize: none;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  margin-left: 15px;
+  width: 75%;
+}

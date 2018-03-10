@@ -19,7 +19,10 @@ class QuestionIndex extends React.Component {
         question={question}
         user={user}
         currentUserQuestion={this.props.currentUserId === user.id}
-        openModal={this.props.openModal}/>
+        openModal={this.props.openModal}
+        openDropDownForm={this.props.openDropDownForm}
+        dropDownId={this.props.dropDownId}/>
+
         );
     });
     return(

@@ -26,7 +26,6 @@ class QuestionForm extends React.Component {
     }
   }
 
-
   handleSubmit(e){
     e.preventDefault();
     this.props.submitAction(this.state).then(this.props.closeModal);

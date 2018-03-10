@@ -8,13 +8,17 @@ class AnswerForm extends React.Component {
   render(){
     return(
       <div>
-        <form>
-          <textarea placeholder="Write your answer"></textarea>
+        <form className="answer-form">
+          <textarea className="answer-form-text" placeholder="Write your answer"></textarea>
+          <div onClick={this.props.closeDropDownForm} className="closeX">X</div>
         </form>
       </div>
     );
   }
-
 }
+
+
+
+
 
 export default AnswerForm;

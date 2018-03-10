@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import AnswerFormContainer from '../answers/answer_form_container';
-
+import DropDownForm from '../user_interface/drop_down_form';
 
 class QuestionItem extends React.Component {
   constructor(props){
@@ -10,8 +10,7 @@ class QuestionItem extends React.Component {
     this.addEditButton = this.addEditButton.bind(this);
     this.addDeleteButton = this.addDeleteButton.bind(this);
     this.fnDeleteQuestion = this.fnDeleteQuestion.bind(this);
-    this.addAnswerForm = this.addAnswerForm.bind(this);
-    this.addAnswerConditional = this.addAnswerConditional.bind(this);
+    this.handleDropDown = this.handleDropDown.bind(this);
   }
 
   addEditButton(){
@@ -39,14 +38,10 @@ class QuestionItem extends React.Component {
     }
   }
 
-  addAnswerForm(){
-    if (this.addAnswer) {
-      return <AnswerFormContainer />;
+  handleDropDown(){
+    if(this.props.dropDownId === this.props.question.id){
+      return <DropDownForm />;
     }
-  }
-
-  addAnswerConditional(){
-    this.addAnswer = true;
   }
 
 
@@ -58,7 +53,7 @@ class QuestionItem extends React.Component {
         <h6 className="question-author">Author's Username: {this.props.user.username}</h6>
         <span className="create-form-footer">
           <div className="answer-button"
-            onClick={() => this.props.openModal('answerForm', this.props.question.id)}>
+            onClick={() => this.props.openDropDownForm('answerForm', this.props.question.id)}>
             <button className="fas fa-pencil-alt">Answer</button>
           </div>
           <span className="edit-delete">
@@ -66,11 +61,8 @@ class QuestionItem extends React.Component {
             {this.addDeleteButton()}
           </span>
         </span>
-        {this.addAnswerForm()}
       </div>,
-      <div key='x' className='b'>
-        {true && <div className='c'></div>}
-      </div>
+      <div key= 'b'>{this.handleDropDown()}</div>
     ]
     );
   }
