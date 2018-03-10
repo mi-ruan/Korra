@@ -2,11 +2,12 @@ import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import AnswerFormContainer from '../answers/answer_form_container';
 import DropDownForm from '../user_interface/drop_down_form';
+import AnswerItem from '../answers/answer_item';
+
 
 class QuestionItem extends React.Component {
   constructor(props){
     super(props);
-    this.addAnswer = false;
     this.addEditButton = this.addEditButton.bind(this);
     this.addDeleteButton = this.addDeleteButton.bind(this);
     this.fnDeleteQuestion = this.fnDeleteQuestion.bind(this);
@@ -47,10 +48,10 @@ class QuestionItem extends React.Component {
 
   render() {
     return(
-      [<div key='a' className="main-question-form">
+      <div className="main-question-form">
         <Link to={`/questions/${this.props.question.id}`}
           className="question-title">{this.props.question.title}</Link>
-        <h6 className="question-author">Author's Username: {this.props.user.username}</h6>
+        <h6 className="author-name">Author's Username: {this.props.user.username}</h6>
         <span className="create-form-footer">
           <div className="answer-button"
             onClick={() => this.props.openDropDownForm('answerForm', this.props.question.id)}>
@@ -61,9 +62,11 @@ class QuestionItem extends React.Component {
             {this.addDeleteButton()}
           </span>
         </span>
-      </div>,
-      <div key= 'b'>{this.handleDropDown()}</div>
-    ]
+        <div className="drop-down">{this.handleDropDown()}</div>
+        <AnswerItem key='answer-item-key' user={this.props.currentUser}
+        users={this.props.users}
+        answer={this.props.question.answer || {}} />
+      </div>
     );
   }
 }

@@ -2,6 +2,7 @@ json.questions do
   @questions.each do |question|
     json.set! question.id do
       json.partial! 'question', question: question
+      json.answer question.answers.last
     end
   end
 end

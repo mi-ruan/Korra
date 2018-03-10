@@ -15,14 +15,15 @@ class QuestionIndex extends React.Component {
   render() {
     const QuestionItems = this.props.questions.map((question, idx) => {
       const user = this.props.users[question.user_id];
+      const currentUser = this.props.users[this.props.currentUserId];
       return (<QuestionItem key={idx}
         question={question}
         user={user}
+        currentUser = {currentUser}
         currentUserQuestion={this.props.currentUserId === user.id}
         openModal={this.props.openModal}
         openDropDownForm={this.props.openDropDownForm}
         dropDownId={this.props.dropDownId}/>
-
         );
     });
     return(

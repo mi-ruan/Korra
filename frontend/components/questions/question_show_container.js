@@ -3,6 +3,7 @@ import QuestionShow from './question_show';
 import {getSelectedUser} from '../../reducers/selectors';
 import {fetchQuestion, updateQuestion, deleteQuestion} from '../../actions/question_actions';
 import {openModal} from '../../actions/modal_actions';
+import {openDropDownForm} from '../../actions/drop_down_form_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const question = state.entities.questions[ownProps.match.params.questionId];
@@ -11,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     question,
     user,
-    currentUserId: state.session.id
+    currentUserId: state.session.id,
+    dropDownId: state.ui.dropDownForm.id || null,
   };
 };
 
@@ -21,6 +23,7 @@ const mapDispatchToProps = dispatch => {
     updateQuestion: (question) => dispatch(updateQuestion(question)),
     deleteQuestion: (id) => dispatch(deleteQuestion(id)),
     openModal: (modal, id) => dispatch(openModal(modal, id)),
+    openDropDownForm: (dropDown, id) => dispatch(openDropDownForm(dropDown, id)),
   };
 };
 

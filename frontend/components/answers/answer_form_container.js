@@ -1,19 +1,24 @@
 import {connect} from 'react-redux';
 import ActionForm from './answer_form';
-import {createAnswer, updateAnswer, deleteAnswer} from '../../actions/answer_actions';
+import {createAnswer} from '../../actions/answer_actions';
 import {closeDropDownForm} from '../../actions/drop_down_form_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    question: state.entities.users[ownProps.question.id],
+    user: state.entities.users[state.session],
+    question: state.entities.questions[ownProps.question.id],
+    answer: {
+      body: "",
+      question_id: ownProps.question.id,
+      user_id: state.session
+    },
+    formType: 'createForm',
   });
 };
 
 const mapDispatchToProps = dispatch => {
   return ({
     createAnswer: (answer, questionId) => dispatch(createAnswer(answer, questionId)),
-    updateAnswer: (answer) => dispatch(updateAnswer(answer)),
-    deleteAnswer: (id) => dispatch(deleteAnswer(id)),
     closeDropDownForm: () => dispatch(closeDropDownForm()),
   });
 };

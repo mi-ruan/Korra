@@ -24,7 +24,6 @@
   position: relative;
   height: 200px;
   background: white;
-  border: 2px solid lightgrey;
   padding: 5px;
   margin: 1px 0px;
 }
@@ -35,4 +34,70 @@
   overflow-wrap: break-word;
   margin-left: 15px;
   width: 75%;
+  font-size: 20px;
+}
+
+.add-answer-button-create {
+  color: white;
+  height: 30px;
+  font-size: 14px;
+  text-align: center;
+  width: 50px;
+  border-radius: 3px;
+  font-family: Arial;
+  border: 1px solid #1A63AD;
+  background: #3E78AD;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+}
+
+.add-answer-button-create:hover{
+  border: 2px solid #1A63AD;
+}
+
+.answer-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: white;
+  padding: 5px 0px;;
+  margin: 10px 0px;
+  border-top: 1px solid lightgrey;
+}
+
+.answer-p{
+  margin-left: 10px;
+  font-size: 18px;
+  font-family: 'Noto', serif;
+}
+
+.edit-delete-answer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.answer-edit {
+  display: flex;
+  font-size: 12px;
+  width: 30px;
+}
+
+.answer-delete {
+  display: flex;
+  font-size: 12px;
+  width: 60px;
+  
+}
+
+.answer-edit:hover {
+  text-decoration: underline;
+  color: #6C1B17;
+}
+
+.answer-delete:hover {
+  text-decoration: underline;
+  color: #6C1B17;
 }

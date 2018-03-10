@@ -50,14 +50,14 @@
   text-decoration: underline;
 }
 
-.question-author{
+.author-name{
   display: flex;
   margin: 0 10px;
   font-size: 12px;
   font-weight: 500;
 }
 
-.question-show-form > .main-question-form > .question-author {
+.question-show-form > .main-question-form > .author-name {
   margin-top: 10px;
 }
 
