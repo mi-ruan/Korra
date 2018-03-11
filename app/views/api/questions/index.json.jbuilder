@@ -17,7 +17,7 @@ end
 json.answers do
   @questions.each do |question|
     next if question.answers.length < 1
-    json.set! question.id do
+    json.set! question.answers.last.id do
       json.partial! 'api/answers/answer', answer: question.answers.last
     end
   end

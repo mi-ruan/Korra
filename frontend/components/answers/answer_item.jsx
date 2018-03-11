@@ -1,18 +1,21 @@
 import React from 'react';
+import DropDownForm from '../user_interface/drop_down_form';
 import {withRouter} from 'react-router-dom';
+
 
 class AnswerItem extends React.Component {
   constructor(props){
     super(props);
-    this.fnDeleteAnswer = this.fnDeleteAnswer.bind(this);
     this.addDeleteButton = this.addDeleteButton.bind(this);
-    this.author = this.props.users[this.props.answer.user_id].username;
+    this.handleDropDown = this.handleDropDown.bind(this);
+    this.addEditButton = this.addEditButton.bind(this);
+    this.fnDeleteAnswer = this.fnDeleteAnswer.bind(this);
   }
 
   addEditButton(){
     if(this.props.currentUser.id === this.props.answer.user_id) {
       return(<button className="answer-edit"
-      onClick={() => this.props.openDropDownForm('updateForm', this.props.question)}>
+      onClick={() => this.props.openDropDownForm('updateForm', this.props.answer.id)}>
       Edit</button>);
     }
   }
@@ -30,16 +33,21 @@ class AnswerItem extends React.Component {
     }
   }
 
+  handleDropDown(){
+    if(this.props.dropDownId === this.props.answer.id){
+      return <DropDownForm />;
+    }
+  }
+
   render() {
     return(
       <div className= "answer-item">
-        <h6 className="author-name">
-        Author Username: {this.author}</h6>
         <p className="answer-p">{this.props.answer.body}</p>
         <span className="edit-delete-answer">
           {this.addEditButton()}
           {this.addDeleteButton()}
         </span>
+        <DropDownForm />
       </div>
     )
   }

@@ -4,11 +4,11 @@ import {openDropDownForm} from '../../actions/drop_down_form_actions';
 import {deleteAnswer} from '../../actions/answer_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const answer = state.entities.answers[ownProps.question] || {};
+  const answer = state.entities.answers[ownProps.answer.id] || {};
   return ({
       users: Object.assign({}, state.entities.users),
       currentUser: state.entities.users[state.session.id],
-      answer,
+      answer: answer,
   });
 };
 
