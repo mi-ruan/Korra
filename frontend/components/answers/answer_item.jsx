@@ -22,7 +22,7 @@ class AnswerItem extends React.Component {
 
   fnDeleteAnswer() {
     this.props.deleteAnswer(this.props.answer.id)
-      .then(() => this.props.history.push('/'));
+    .then(()=> this.props.fetchQuestions());
   }
 
   addDeleteButton(){
@@ -47,7 +47,7 @@ class AnswerItem extends React.Component {
           {this.addEditButton()}
           {this.addDeleteButton()}
         </span>
-        <DropDownForm />
+        <div className="drop-down">{this.handleDropDown()}</div>
       </div>
     )
   }

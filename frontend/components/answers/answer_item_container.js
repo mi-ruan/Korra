@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import AnswerItem from './answer_item';
 import {openDropDownForm} from '../../actions/drop_down_form_actions';
+import {fetchQuestions} from '../../actions/question_actions';
 import {deleteAnswer} from '../../actions/answer_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -9,11 +10,13 @@ const mapStateToProps = (state, ownProps) => {
       users: Object.assign({}, state.entities.users),
       currentUser: state.entities.users[state.session.id],
       answer: answer,
+      dropDownId: state.ui.dropDownForm.id || null,
   });
 };
 
 const mapDispatchToProps = dispatch => {
   return ({
+    fetchQuestions: () => dispatch(fetchQuestions()),
     deleteAnswer: (id) => dispatch(deleteAnswer(id)),
     openDropDownForm: (type, id) => dispatch(openDropDownForm(type,id)),
   })

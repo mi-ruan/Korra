@@ -48,8 +48,8 @@ class QuestionItem extends React.Component {
 
   handleAnswerItems() {
     if(this.props.question.answers.length > 0) {
-       return (<AnswerItemContainer
-         answer={this.props.question.answers[this.props.question.answers.length - 1]} />);
+      return (<AnswerItemContainer
+        answer={this.props.question.answers[this.props.question.answers.length - 1]} />);
     }
   };
 

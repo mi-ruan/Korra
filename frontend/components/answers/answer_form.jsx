@@ -24,8 +24,9 @@ class AnswerForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.submitAction(this.state, this.state.question_id).
-    then(this.props.closeDropDownForm);
+    this.props.submitAction(this.state, this.state.question_id)
+    .then(() => this.props.fetchQuestions())
+    .then(this.props.closeDropDownForm);
   }
 
   render(){
