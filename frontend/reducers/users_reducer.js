@@ -3,7 +3,7 @@ import {RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { merge } from 'lodash';
 
 
-const userReducer = (oldState = {}, action) => {
+const usersReducer = (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_QUESTIONS:
       return merge({}, oldState, action.users);
@@ -14,4 +14,4 @@ const userReducer = (oldState = {}, action) => {
   }
 };
 
-export default userReducer;
+export default usersReducer;

@@ -8,7 +8,8 @@ export const receiveQuestions = payload => {
   return {
     type: RECEIVE_QUESTIONS,
     questions: payload.questions,
-    users: payload.users
+    users: payload.users,
+    answers: payload.answers,
   };
 };
 

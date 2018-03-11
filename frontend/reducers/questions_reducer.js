@@ -5,7 +5,7 @@ import {
    REMOVE_QUESTION
  } from '../actions/question_actions';
 
-const questionReducer = (state = {}, action) => {
+const questionsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_QUESTIONS:
@@ -21,4 +21,4 @@ const questionReducer = (state = {}, action) => {
   }
 };
 
-export default questionReducer;
+export default questionsReducer;

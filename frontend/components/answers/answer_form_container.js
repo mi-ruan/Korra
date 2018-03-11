@@ -1,7 +1,8 @@
 import {connect} from 'react-redux';
 import ActionForm from './answer_form';
 import {createAnswer} from '../../actions/answer_actions';
-import {closeDropDownForm} from '../../actions/drop_down_form_actions';
+import {openDropDownForm,
+  closeDropDownForm} from '../../actions/drop_down_form_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
@@ -18,7 +19,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return ({
-    createAnswer: (answer, questionId) => dispatch(createAnswer(answer, questionId)),
+    submitAction: (answer, questionId) => dispatch(createAnswer(answer, questionId)),
+    openDropDownForm: (type, id) => dispatch(openDropDownForm(type,id)),
     closeDropDownForm: () => dispatch(closeDropDownForm()),
   });
 };

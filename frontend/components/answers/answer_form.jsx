@@ -13,6 +13,8 @@ class AnswerForm extends React.Component {
   renderButtons() {
     if(this.props.formType === "createForm") {
       return <button className="add-answer-button-create">Submit</button>;
+    } else if(this.props.formType === "updateForm"){
+      return <button className="add-answer-button-update">Save Changes</button>;
     }
   }
 
@@ -22,7 +24,7 @@ class AnswerForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.createAnswer(this.state, this.state.question_id).
+    this.props.submitAction(this.state, this.state.question_id).
     then(this.props.closeDropDownForm);
   }
 

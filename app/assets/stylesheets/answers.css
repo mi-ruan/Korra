@@ -37,7 +37,7 @@
   font-size: 20px;
 }
 
-.add-answer-button-create {
+[class^="add-answer-button-"] {
   color: white;
   height: 30px;
   font-size: 14px;
@@ -52,8 +52,12 @@
   left: 15px;
 }
 
-.add-answer-button-create:hover{
+[class^="add-answer-button-"]:hover{
   border: 2px solid #1A63AD;
+}
+
+.add-answer-button-update {
+  width: 100px;
 }
 
 .answer-item {
@@ -89,7 +93,7 @@
   display: flex;
   font-size: 12px;
   width: 60px;
-  
+
 }
 
 .answer-edit:hover {

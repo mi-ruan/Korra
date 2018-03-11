@@ -2,7 +2,7 @@ import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import AnswerFormContainer from '../answers/answer_form_container';
 import DropDownForm from '../user_interface/drop_down_form';
-import AnswerItem from '../answers/answer_item';
+import AnswerItemContainer from '../answers/answer_item_container';
 
 
 class QuestionItem extends React.Component {
@@ -12,6 +12,7 @@ class QuestionItem extends React.Component {
     this.addDeleteButton = this.addDeleteButton.bind(this);
     this.fnDeleteQuestion = this.fnDeleteQuestion.bind(this);
     this.handleDropDown = this.handleDropDown.bind(this);
+    this.handleAnswerItems = this.handleAnswerItems.bind(this);
   }
 
   addEditButton(){
@@ -45,6 +46,13 @@ class QuestionItem extends React.Component {
     }
   }
 
+  handleAnswerItems() {
+    if(this.props.question.answers.length > 0) {
+      return <AnswerItemContainer
+      question={this.props.question.id} />;
+    }
+  };
+
 
   render() {
     return(
@@ -63,9 +71,7 @@ class QuestionItem extends React.Component {
           </span>
         </span>
         <div className="drop-down">{this.handleDropDown()}</div>
-        <AnswerItem key='answer-item-key' user={this.props.currentUser}
-        users={this.props.users}
-        answer={this.props.question.answer || {}} />
+        {this.handleAnswerItems()}
       </div>
     );
   }

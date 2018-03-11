@@ -2,6 +2,7 @@ import React from 'react';
 import { closeDropDownForm } from '../../actions/drop_down_form_actions';
 import { connect } from 'react-redux';
 import AnswerFormContainer from '../answers/answer_form_container';
+import EditAnswerFormContainer from '../answers/edit_answer_form_container';
 
 function DropDownForm({dropDownForm, closeDropDownForm, dropDownFormId}) {
   if (!dropDownForm) {
@@ -11,6 +12,9 @@ function DropDownForm({dropDownForm, closeDropDownForm, dropDownFormId}) {
   switch (dropDownForm) {
     case 'answerForm':
       component = <AnswerFormContainer question={{id: dropDownFormId}} />;
+      break;
+    case 'updateForm':
+      component = <EditAnswerFormContainer question={{id: dropDownFormId}} />;
       break;
     default:
       return null;
