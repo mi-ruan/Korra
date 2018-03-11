@@ -13,10 +13,11 @@ export const receiveQuestions = payload => {
   };
 };
 
-export const receiveQuestion = question => {
+export const receiveQuestion = payload => {
   return {
     type: RECEIVE_QUESTION,
-    question
+    question: payload.question,
+    answers: payload.answers,
   };
 };
 

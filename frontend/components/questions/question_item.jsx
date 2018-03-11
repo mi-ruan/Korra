@@ -13,6 +13,8 @@ class QuestionItem extends React.Component {
     this.fnDeleteQuestion = this.fnDeleteQuestion.bind(this);
     this.handleDropDown = this.handleDropDown.bind(this);
     this.handleAnswerItems = this.handleAnswerItems.bind(this);
+    this.isQuestionShow = (this.props.location.pathname ===
+      `/questions/${this.props.question.id}`);
   }
 
   addEditButton(){
@@ -29,11 +31,8 @@ class QuestionItem extends React.Component {
   }
 
   addDeleteButton(){
-    const isQuestionShow =
-    (this.props.location.pathname ===
-      `/questions/${this.props.question.id}`);
     if(this.props.currentUserQuestion &&
-      isQuestionShow){
+      this.isQuestionShow){
       return (<button className="question-delete"
         onClick={this.fnDeleteQuestion}
         >Delete</button>);
@@ -47,9 +46,17 @@ class QuestionItem extends React.Component {
   }
 
   handleAnswerItems() {
-    if(this.props.question.answers.length > 0) {
-      return (<AnswerItemContainer
-        answer={this.props.question.answers[this.props.question.answers.length - 1]} />);
+    if(this.props.question.answerIds.length > 0) {
+      if (this.isQuestionShow) {
+        const answersArray = this.props.question.answerIds;
+        const AnswerItemMap = answersArray.map((answer) => {
+          return <AnswerItemContainer key={answer.id} answer={answer} />;
+        });
+        return AnswerItemMap;
+      } else {
+        return (<AnswerItemContainer
+        answer={this.props.question.answerIds[this.props.question.answerIds.length - 1]} />);
+      }
     }
   };
 

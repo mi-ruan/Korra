@@ -40,6 +40,9 @@ class AnswerItem extends React.Component {
   }
 
   render() {
+    //this is weird. ask why this happens. this code bugs delete out.
+    // const author = this.props.users[this.props.answer.user_id].username;
+    // <h6 className="author-name">Author Username: {author}</h6>
     return(
       <div className= "answer-item">
         <p className="answer-p">{this.props.answer.body}</p>
