@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {openHeaderModal} from '../../actions/header_modal_actions';
-
+import {Link} from 'react-router-dom';
 
 
 class QuestionSearch extends React.Component {
@@ -12,6 +12,7 @@ class QuestionSearch extends React.Component {
     };
     this.updateTitle = this.updateTitle.bind(this);
     this.selectQuestion = this.selectQuestion.bind(this);
+    this.resetSearch = this.resetSearch.bind(this);
   }
 
   updateTitle(e){
@@ -25,11 +26,11 @@ class QuestionSearch extends React.Component {
     }
     this.props.questions.forEach(question => {
       if (question.title.toLowerCase().includes(this.state.title.toLowerCase())) {
-        matches.push(question.title);
+        matches.push(question);
       }
     });
     if (matches.length === 0) {
-      matches.push('No Results');
+      matches.push({title: 'No Results'});
     }
     return matches;
   }
@@ -39,11 +40,23 @@ class QuestionSearch extends React.Component {
     this.setState({'title': question});
   }
 
+  resetSearch() {
+    this.props.closeHeaderModal();
+    this.setState({title: ''});
+    this.matches();
+  }
+
+
   render() {
     let results = this.matches().map((result, i) => {
-      return (
-        <li key={i} onClick={this.Question} className='question-search-item'>{result}</li>
-      );
+      if (result.id) {
+        return (
+          <Link to={`/questions/${result.id}`} key={i}  className='question-search-item'
+            onClick={this.resetSearch}>{result.title}</Link>
+        );
+      } else {
+        return <li key='result' className='question-search-item-no'>{result.title}</li>;
+      }
     });
     return(
       <div className="question-search-div">

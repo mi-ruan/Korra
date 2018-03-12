@@ -41,10 +41,13 @@ class AnswerItem extends React.Component {
 
   render() {
     //this is weird. ask why this happens. this code bugs delete out.
-    const author = this.props.users[this.props.answer.user_id].username;
+    const author = this.props.users[this.props.answer.user_id];
+    if (!author) {
+      return <div></div>;
+    }
     return(
       <div className= "answer-item">
-        <h6 className="author-name">Author Username: {author}</h6>
+        <h6 className="author-name">Author Username: {author.username}</h6>
         <p className="answer-p">{this.props.answer.body}</p>
         <span className="edit-delete-answer">
           {this.addEditButton()}

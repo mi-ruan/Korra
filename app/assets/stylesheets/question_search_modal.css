@@ -12,17 +12,25 @@
   position: absolute;
   top: 35px;
   z-index: 7;
+  display: flex;
+  flex-direction: column;
 }
 
 .question-search-div {
   position: relative;
 }
 
-.question-search-item {
+.question-search-item, .question-search-item-no {
+  display: flex;
   background: white;
   width: 300px;
   min-height: 20px;
   height: 100%;
   padding: 3px;
   border: 1px solid lightgrey;
+}
+
+.question-search-item:hover {
+  text-decoration: underline;
+  color: #94B0D0;
 }
