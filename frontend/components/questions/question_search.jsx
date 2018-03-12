@@ -46,7 +46,6 @@ class QuestionSearch extends React.Component {
     this.matches();
   }
 
-
   render() {
     let results = this.matches().map((result, i) => {
       if (result.id) {
