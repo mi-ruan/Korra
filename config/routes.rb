@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :answers, only: :create
     end
     resources :answers, only: [:show, :update, :destroy]
+    resources :topics, only: [:create, :show, :index, :destroy]
   end
 
 end

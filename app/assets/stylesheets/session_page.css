@@ -34,6 +34,8 @@
   color: #aaa;
 }
 
+
+
 .session-title {
   font-family: 'Bree', serif;
   flex-direction: column;
@@ -93,4 +95,5 @@ span#login > .session-submit,
   background: lightgray;
   border-radius: 5px;
   color: black;
+  padding-left: 10px;
 }

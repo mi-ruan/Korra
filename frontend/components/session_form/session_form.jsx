@@ -27,6 +27,7 @@ class SessionForm extends React.Component{
     if(this.props.formType === "Sign Up") {
       return (<label>USERNAME
         <input type="text" onChange={this.update("username")}
+          className= "username"
           value={this.state.username}/>
       </label>
       );
@@ -41,10 +42,12 @@ class SessionForm extends React.Component{
           {this.addUsername()}
           <label>EMAIL
             <input type="text" onChange={this.update("email")}
+              className="email"
               value={this.state.email}/>
           </label>
           <label>PASSWORD
             <input type="password" onChange={this.update("password")}
+              className="password"
               value={this.state.password}/>
           </label>
           <span id={this.props.klass}>
