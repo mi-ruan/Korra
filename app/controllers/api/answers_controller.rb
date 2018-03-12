@@ -26,9 +26,10 @@ class Api::AnswersController < ApplicationController
 
   def destroy
     @answer = current_user.answers.find(params[:id])
+    question_id = @answer.question_id
     if @answer
       Answer.delete(@answer)
-      render json: {}
+      render json: {questionId: question_id}
     else
       render json: {}, status: 404
     end

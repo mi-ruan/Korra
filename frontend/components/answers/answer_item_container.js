@@ -5,7 +5,8 @@ import {fetchQuestions, fetchQuestion} from '../../actions/question_actions';
 import {deleteAnswer} from '../../actions/answer_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const answer = state.entities.answers[ownProps.answer.id] || {};
+
+  const answer = state.entities.answers[ownProps.answerId] || {};
   return ({
       users: Object.assign({}, state.entities.users),
       currentUser: state.entities.users[state.session.id],
@@ -20,7 +21,7 @@ const mapDispatchToProps = dispatch => {
     fetchQuestions: () => dispatch(fetchQuestions()),
     deleteAnswer: (id) => dispatch(deleteAnswer(id)),
     openDropDownForm: (type, id) => dispatch(openDropDownForm(type,id)),
-  })
+  });
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AnswerItem);

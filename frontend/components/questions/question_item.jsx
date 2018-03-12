@@ -50,15 +50,15 @@ class QuestionItem extends React.Component {
       if (this.isQuestionShow) {
         const answersArray = this.props.question.answerIds;
         const AnswerItemMap = answersArray.map((answer) => {
-          return <AnswerItemContainer key={answer.id} answer={answer} />;
+          return <AnswerItemContainer key={answer} answerId={answer} />;
         });
         return AnswerItemMap;
       } else {
         return (<AnswerItemContainer
-        answer={this.props.question.answerIds[this.props.question.answerIds.length - 1]} />);
+        answerId={this.props.question.answerIds[this.props.question.answerIds.length - 1]} />);
       }
     }
-  };
+  }
 
 
   render() {

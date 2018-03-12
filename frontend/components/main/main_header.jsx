@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import {openModal} from '../../actions/modal_actions';
-import QuestionSearchContainer from './question_search_container';
+import QuestionSearchContainer from '../questions/question_search_container';
 
 const mainHeader = ({logout}) => {
   return (

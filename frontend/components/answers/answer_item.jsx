@@ -41,10 +41,10 @@ class AnswerItem extends React.Component {
 
   render() {
     //this is weird. ask why this happens. this code bugs delete out.
-    // const author = this.props.users[this.props.answer.user_id].username;
-    // <h6 className="author-name">Author Username: {author}</h6>
+    const author = this.props.users[this.props.answer.user_id].username;
     return(
       <div className= "answer-item">
+        <h6 className="author-name">Author Username: {author}</h6>
         <p className="answer-p">{this.props.answer.body}</p>
         <span className="edit-delete-answer">
           {this.addEditButton()}
@@ -52,7 +52,7 @@ class AnswerItem extends React.Component {
         </span>
         <div className="drop-down">{this.handleDropDown()}</div>
       </div>
-    )
+    );
   }
 }
 

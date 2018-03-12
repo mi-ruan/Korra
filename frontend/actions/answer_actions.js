@@ -10,10 +10,11 @@ export const receiveAnswer = answer => {
   };
 };
 
-export const removeAnswer = answerId => {
+export const removeAnswer = (answerId, questionId) => {
   return {
     type: REMOVE_ANSWER,
-    answerId
+    answerId,
+    questionId
   };
 };
 
@@ -48,7 +49,7 @@ export const deleteAnswer = (id) => {
   return (
     dispatch => {
       return AnswerApiUtil.deleteAnswer(id)
-      .then(() => dispatch(removeAnswer(id)));
+      .then(({questionId}) => dispatch(removeAnswer(id, questionId)));
     }
   );
 };

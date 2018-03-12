@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom';
 class AnswerForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = this.props.answer
+    this.state = this.props.answer;
     this.renderButtons = this.renderButtons.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateBody = this.updateBody.bind(this);
@@ -19,7 +19,7 @@ class AnswerForm extends React.Component {
   }
 
   updateBody(e){
-    this.setState({"body": e.target.value})
+    this.setState({"body": e.target.value});
   }
 
   handleSubmit(e){

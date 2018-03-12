@@ -3,7 +3,6 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import QuestionCreateContainer from '../questions/question_create_container';
 import QuestionUpdateContainer from '../questions/question_update_container';
-import QuestionSearchContainer from '../main/question_search_container';
 
 function Modal({modal, closeModal, modalId}) {
   if (!modal) {

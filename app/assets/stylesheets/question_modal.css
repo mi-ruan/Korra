@@ -7,7 +7,7 @@
 .question-create {
   display: flex;
   flex-direction: column;
-  width: 99%;
+  width: 99.4%;
   background: white;
   border: 2px solid lightgrey;
   margin: 2px;
@@ -36,7 +36,7 @@ textarea.question-create-form {
 }
 
 .question-create-form-modal {
-  position: absolute;
+  position: relative;
   z-index: 3;
   background: white;
   display: flex;

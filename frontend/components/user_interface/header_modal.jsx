@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeHeaderModal } from '../../actions/header_modal_actions';
 import { connect } from 'react-redux';
-import QuestionSearchContainer from '../main/question_search_container';
+import QuestionSearchContainer from '../questions/question_search_container';
 
 function HeaderModal({HeaderModal, closeHeaderModal, HeaderModalId}) {
   if (!HeaderModal) {

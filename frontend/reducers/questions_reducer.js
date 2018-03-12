@@ -5,6 +5,10 @@ import {
    REMOVE_QUESTION
  } from '../actions/question_actions';
 
+ import {
+   REMOVE_ANSWER
+ } from '../actions/answer_actions';
+
 const questionsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
@@ -16,6 +20,12 @@ const questionsReducer = (state = {}, action) => {
       const newState = merge({}, state);
       delete newState[action.questionId];
       return newState;
+    case REMOVE_ANSWER:
+      const newState2 = merge({}, state);
+      const arr = newState2[action.questionId].answerIds;
+      const index = arr.indexOf(action.answerId);
+      arr.splice(index,1);
+      return newState2;
     default:
       return state;
   }
