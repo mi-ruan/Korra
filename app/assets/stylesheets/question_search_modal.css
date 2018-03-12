@@ -9,11 +9,20 @@
 }
 
 .question-search-list {
-  display: none;
-  /* position: absolute;
-  top: 44px; */
+  position: absolute;
+  top: 35px;
+  z-index: 7;
 }
 
 .question-search-div {
   position: relative;
+}
+
+.question-search-item {
+  background: white;
+  width: 300px;
+  min-height: 20px;
+  height: 100%;
+  padding: 3px;
+  border: 1px solid lightgrey;
 }

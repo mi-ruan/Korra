@@ -2,6 +2,8 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {openHeaderModal} from '../../actions/header_modal_actions';
 
+
+
 class QuestionSearch extends React.Component {
   constructor(props){
     super(props);
@@ -19,16 +21,15 @@ class QuestionSearch extends React.Component {
   matches() {
     const matches = [];
     if (this.state.title.length === 0) {
-      return this.props.questions;
+      return matches;
     }
     this.props.questions.forEach(question => {
-      let sub = name.slice(0, this.state.title.length);
-      if (sub.toLowerCase() === this.state.title.toLowerCase()) {
-        matches.push(question);
+      if (question.title.toLowerCase().includes(this.state.title.toLowerCase())) {
+        matches.push(question.title);
       }
     });
     if (matches.length === 0) {
-      matches.push('No matches');
+      matches.push('No Results');
     }
     return matches;
   }
@@ -41,7 +42,7 @@ class QuestionSearch extends React.Component {
   render() {
     let results = this.matches().map((result, i) => {
       return (
-        <li key={i} onClick={this.Question}>{result.title}</li>
+        <li key={i} onClick={this.Question} className='question-search-item'>{result}</li>
       );
     });
     return(
@@ -56,8 +57,8 @@ class QuestionSearch extends React.Component {
         <ul className="question-search-list">
           <ReactCSSTransitionGroup
             transitionName='auto'
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}>
+            transitionEnterTimeout={100}
+            transitionLeaveTimeout={100}>
           {results}
           </ReactCSSTransitionGroup>
         </ul>

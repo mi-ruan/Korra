@@ -7,7 +7,11 @@ json.questions do
 end
 
 json.users do
-  @questions.map(&:user).each do |user|
+  working_users = @questions.map(&:user)
+  @questions.each do |question|
+    working_users.concat(question.answerers)
+  end
+  working_users.each do |user|
     json.set! user.id do
       json.partial! '/api/users/user', user: user
     end
