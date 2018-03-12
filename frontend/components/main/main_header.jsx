@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import {openModal} from '../../actions/modal_actions';
+import QuestionSearchContainer from './question_search_container';
 
 const mainHeader = ({logout}) => {
   return (
@@ -13,8 +14,7 @@ const mainHeader = ({logout}) => {
             className="tabs-home fas fa-newspaper">Home</NavLink>
         </nav>
         <nav className="right-nav">
-          <input type="text" className="question-search"
-            placeholder={`\uD83D\uDD0D Search Quora`}></input>
+          <QuestionSearchContainer />
           <button className="logout-button" onClick={() => logout()}>Log Out</button>
           <button className="add-question-button-nav"
           onClick={() => dispatch(openModal('createForm'))}>Add Question</button>
