@@ -15,8 +15,10 @@ class TopicsList extends React.Component {
     const topicsArray = this.props.question.topicIds;
     const TopicItemMap = topicsArray.map((id) => {
       return (
-        <div key={id}>
-          <h6 onClick={this.handleDelete}>X</h6>
+        <div key={id} className="all-item-tag">
+          <h6
+            className="tag-delete"
+            onClick={this.handleDelete}>X</h6>
           <Link to={`/topics/${id}`}
           className="topic-tags"
           >{this.props.topics[id].tag}</Link>
