@@ -1,4 +1,4 @@
-.header-modal-background {
+#header-modal-background {
   position: fixed;
   background: rgba(0, 0, 0, 0.6);
   top: 44px;

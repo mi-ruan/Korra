@@ -15,4 +15,12 @@ json.users do
       json.partial! 'api/users/user', user:user
     end
   end
-end 
+end
+
+json.topics do
+  @question.topics.each do |topic|
+    json.set! topic.id do
+      json.partial! 'api/topics/topic', topic: topic
+    end
+  end
+end  

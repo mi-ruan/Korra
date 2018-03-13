@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {openHeaderModal} from '../../actions/header_modal_actions';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 
 class QuestionSearch extends React.Component {
@@ -13,6 +13,8 @@ class QuestionSearch extends React.Component {
     this.updateTitle = this.updateTitle.bind(this);
     this.selectQuestion = this.selectQuestion.bind(this);
     this.resetSearch = this.resetSearch.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.matches = this.matches.bind(this);
   }
 
   updateTitle(e){
@@ -34,6 +36,20 @@ class QuestionSearch extends React.Component {
     }
     return matches;
   }
+
+  handleKeyPress(e) {
+    if(e.key === "Enter"){
+      const matchers = this.matches();
+      if (matchers.length === 0) {
+        this.resetSearch();
+      } else {
+        const question = matchers[0];
+        this.resetSearch();
+        this.props.history.push(`/questions/${question.id}`);
+      }
+    }
+  }
+
 
   selectQuestion(e) {
     let question = e.currentTarget.innerText;
@@ -59,7 +75,7 @@ class QuestionSearch extends React.Component {
     });
     return(
       <div className="question-search-div">
-        <form>
+        <form onKeyPress={this.handleKeyPress}>
           <input type="text" className="question-search"
             placeholder={`\uD83D\uDD0D Search Quora`}
             onClick={() => dispatch(openHeaderModal('questionSearchForm'))}
@@ -77,7 +93,7 @@ class QuestionSearch extends React.Component {
       </div>
     );
   }
-
 }
 
-export default QuestionSearch;
+
+export default withRouter(QuestionSearch);

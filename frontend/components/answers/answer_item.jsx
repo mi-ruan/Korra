@@ -45,9 +45,12 @@ class AnswerItem extends React.Component {
     if (!author) {
       return <div></div>;
     }
+    let date = new Date(this.props.answer.updated_at);
+    date = date.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
     return(
       <div className= "answer-item">
         <h6 className="author-name">Author Username: {author.username}</h6>
+        <h6 className="date-class">Updated: {date}</h6>
         <p className="answer-p">{this.props.answer.body}</p>
         <span className="edit-delete-answer">
           {this.addEditButton()}
