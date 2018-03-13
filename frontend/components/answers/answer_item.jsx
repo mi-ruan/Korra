@@ -1,7 +1,8 @@
 import React from 'react';
 import DropDownForm from '../user_interface/drop_down_form';
 import {withRouter} from 'react-router-dom';
-
+import Moment from 'react-moment';
+import ReactQuill, {Quill, Mixin, Toolbar} from 'react-quill';
 
 class AnswerItem extends React.Component {
   constructor(props){
@@ -40,18 +41,21 @@ class AnswerItem extends React.Component {
   }
 
   render() {
-    //this is weird. ask why this happens. this code bugs delete out.
     const author = this.props.users[this.props.answer.user_id];
     if (!author) {
       return <div></div>;
     }
-    let date = new Date(this.props.answer.updated_at);
-    date = date.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+    // let date = new Date(this.props.answer.updated_at);
+    // date = date.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+    // <h6 className="date-class">Updated: {date}</h6>
     return(
       <div className= "answer-item">
         <h6 className="author-name">Author Username: {author.username}</h6>
-        <h6 className="date-class">Updated: {date}</h6>
-        <p className="answer-p">{this.props.answer.body}</p>
+        <div className="date-class">
+          <p>Updated: </p>
+        <Moment fromNow>{this.props.answer.updated_at}</Moment>
+        </div>
+        <ReactQuill readOnly modules={{toolbar: null}} value={this.props.answer.body} className="answer-p"></ReactQuill>
         <span className="edit-delete-answer">
           {this.addEditButton()}
           {this.addDeleteButton()}

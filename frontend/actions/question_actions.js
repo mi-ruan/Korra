@@ -10,6 +10,7 @@ export const receiveQuestions = payload => {
     questions: payload.questions,
     users: payload.users,
     answers: payload.answers,
+    topics: payload.topics,
   };
 };
 
@@ -18,6 +19,7 @@ export const receiveQuestion = payload => {
     type: RECEIVE_QUESTION,
     question: payload.question,
     answers: payload.answers,
+    topics: payload.topics,
   };
 };
 

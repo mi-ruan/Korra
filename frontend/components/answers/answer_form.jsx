@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
+import ReactQuill from 'react-quill';
 
 class AnswerForm extends React.Component {
   constructor(props){
@@ -18,8 +19,8 @@ class AnswerForm extends React.Component {
     }
   }
 
-  updateBody(e){
-    this.setState({"body": e.target.value});
+  updateBody(value){
+    this.setState({"body": value});
   }
 
   handleSubmit(e){
@@ -37,10 +38,10 @@ class AnswerForm extends React.Component {
     return(
       <div>
         <form className="answer-form" onSubmit={this.handleSubmit}>
-          <textarea className="answer-form-text"
+          <ReactQuill  className="answer-form-text"
           onChange={this.updateBody}
           value={this.state.body}
-          placeholder="Write your answer" />
+          placeholder="Write your answer"></ReactQuill>
           <div onClick={this.props.closeDropDownForm} className="closeX">X</div>
           {this.renderButtons()}
         </form>

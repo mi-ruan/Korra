@@ -10,7 +10,7 @@
   border-radius: 5px;
   font-size: 14px;
   margin-left: 12px;
-  padding: 3px;
+  padding: 4px 3px;
   font-family: 'Open Sans', sans-serif;
   align-content: center;
 }
@@ -22,7 +22,7 @@
 .answer-form{
   display: flex;
   position: relative;
-  height: 200px;
+  height: 400px;
   background: white;
   padding: 5px;
   margin: 1px 0px;
@@ -104,4 +104,9 @@
 .answer-delete:hover {
   text-decoration: underline;
   color: #6C1B17;
+}
+
+.ql-container.ql-snow{
+  border: 1px solid white;
+  font-size: 14px;
 }

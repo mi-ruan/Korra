@@ -3,7 +3,8 @@ import {Link, withRouter} from 'react-router-dom';
 import AnswerFormContainer from '../answers/answer_form_container';
 import DropDownForm from '../user_interface/drop_down_form';
 import AnswerItemContainer from '../answers/answer_item_container';
-
+import TopicsListContainer from '../topics/topics_list_container';
+import Moment from 'react-moment';
 
 class QuestionItem extends React.Component {
   constructor(props){
@@ -13,15 +14,19 @@ class QuestionItem extends React.Component {
     this.fnDeleteQuestion = this.fnDeleteQuestion.bind(this);
     this.handleDropDown = this.handleDropDown.bind(this);
     this.handleAnswerItems = this.handleAnswerItems.bind(this);
+    this.handleTopicItems = this.handleTopicItems.bind(this);
+    this.handleAddTopic = this.handleAddTopic.bind(this);
     this.isQuestionShow = (this.props.location.pathname ===
       `/questions/${this.props.question.id}`);
   }
 
   addEditButton(){
     if(this.props.currentUserQuestion) {
-      return(<button className="question-edit"
-      onClick={() => this.props.openModal('updateForm', this.props.question.id)}>
-      Edit</button>);
+      return(
+          <button className="question-edit"
+            onClick={() => this.props.openModal('updateForm', this.props.question.id)}>
+            Edit</button>
+          );
     }
   }
 
@@ -60,17 +65,39 @@ class QuestionItem extends React.Component {
     }
   }
 
+  handleTopicItems() {
+    return <TopicsListContainer question={this.props.question} />;
+  }
+
+  handleAddTopic() {
+    if(this.isQuestionShow){
+      return (
+        <div className="add-topics">
+            <button className="fas fa-pencil-alt"
+              onClick={() => this.props.openModal('topicsForm', this.props.question.id)}></button>
+        </div>
+      );
+    }
+  }
 
   render() {
-    let date = new Date(this.props.question.updated_at);
-    date = date.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+    // let date = new Date(this.props.question.updated_at);
+    // date = date.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+            // <h6 className="date-class">Updated: {date}</h6>
     return(
       <div className="main-question-form">
+        <span className="topics-list">
+          {this.handleTopicItems()}
+          {this.handleAddTopic()}
+        </span>
         <Link to={`/questions/${this.props.question.id}`}
           className="question-title">{this.props.question.title}</Link>
         <h6 className="author-name">
         Author's Username: {this.props.user.username}</h6>
-        <h6 className="date-class">Updated: {date}</h6>
+      <div className="date-class">
+        <p>Updated: </p>
+      <Moment fromNow>{this.props.question.updated_at}</Moment>
+      </div>
         <span className="create-form-footer">
           <div className="answer-button"
             onClick={() => this.props.openDropDownForm('answerForm', this.props.question.id)}>

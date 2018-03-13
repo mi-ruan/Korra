@@ -43,11 +43,11 @@ export const fetchTopic = (id) => {
     );
   });
 };
-export const createTopic = (topic) => {
+export const createTopic = (topic, questionId) => {
   return (
     dispatch => {
-      return (TopicApiUtil.createTopic(Topic)
-      .then(Topic => dispatch(receiveTopic(Topic)))
+      return (TopicApiUtil.createTopic(topic, questionId)
+      .then(topic => dispatch(receiveTopic(topic)))
     );
   });
 };

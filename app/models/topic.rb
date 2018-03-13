@@ -1,8 +1,8 @@
 class Topic < ApplicationRecord
-  validates :tags, presence: true
+  validates :tag, presence: true, uniqueness: true 
 
+  has_many :taggings, dependent: :destroy
   has_many :questions, through: :taggings
-  has_many :taggings
 
   has_many :answers,
     through: :questions,

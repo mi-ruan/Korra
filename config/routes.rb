@@ -7,9 +7,11 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :questions, only: [:index, :create, :show, :update, :destroy] do
       resources :answers, only: :create
+      resources :topics, only: :create
+      resources :taggings, only: [:create, :destroy]
     end
     resources :answers, only: [:show, :update, :destroy]
-    resources :topics, only: [:create, :show, :index, :destroy]
+    resources :topics, only: [:show, :index, :destroy]
   end
 
 end

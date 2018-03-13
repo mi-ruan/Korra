@@ -16,7 +16,7 @@
   font-size: 20px;
 }
 
-textarea.question-create-form {
+.question-create-form {
   margin-left: 15px;
   width: 75%;
   height: 30%;
@@ -26,7 +26,7 @@ textarea.question-create-form {
   resize: none;
 }
 
-.question-create-form:placeholder {
+.question-create-form:placeholder, .submit-topic-text:placeholder {
   color: grey;
 }
 
@@ -35,17 +35,17 @@ textarea.question-create-form {
   justify-content: center;
 }
 
-.question-create-form-modal {
-  position: relative;
-  z-index: 10;
+.question-create-form-modal, .submit-new-topic {
   background: white;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 300px;
   width: 700px;
   border-radius: 5px;
   border: 1px solid grey;
   font-weight: bolder;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .modal-background {
@@ -55,8 +55,9 @@ textarea.question-create-form {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 8;
 }
+
 
 .closeX {
   position: absolute;
@@ -119,4 +120,11 @@ textarea.question-create-form {
 span.update-buttons {
   display: flex;
   align-items: center;
+}
+
+form.question-create-form-modal {
+  position: fixed;
+  top: 0;
+  width: 700px;
+  z-index: 100;
 }

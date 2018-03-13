@@ -3,7 +3,7 @@ json.topic do
 end
 
 json.questions do
-  @topics.questions.each do |question|
+  @topic.questions.each do |question|
     json.set! question.id do
       json.partial! 'api/questions/question', question: question
     end
@@ -21,7 +21,7 @@ end
 json.users do
   @topic.answerers.each do |user|
     json.set! user.id do
-      json.partial! 'api/answers/answer', user: user
+      json.partial! 'api/users/user', user: user
     end
   end
-end 
+end

@@ -3,7 +3,7 @@ class Question < ApplicationRecord
 
   belongs_to :user
   has_many :answers, dependent: :destroy
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
 
   has_many :topics, through: :taggings
   has_many :answerers,

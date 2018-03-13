@@ -10,11 +10,11 @@ export const fetchTopic = (id) => {
   });
 };
 
-export const createTopic = (topic) => {
+export const createTopic = (tag, questionId) => {
   return $.ajax({
-    url: 'api/topics',
+    url: `api/questions/${questionId}/topics`,
     method: 'POST',
-    data: {topic}
+    data: {topic: {tag}}
   });
 };
 
