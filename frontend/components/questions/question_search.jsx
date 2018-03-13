@@ -40,7 +40,7 @@ class QuestionSearch extends React.Component {
   handleKeyPress(e) {
     if(e.key === "Enter"){
       const matchers = this.matches();
-      if (matchers.length === 0) {
+      if (matchers.length === 0 || matchers[0].title === 'No Results') {
         this.resetSearch();
       } else {
         const question = matchers[0];
