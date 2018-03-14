@@ -40,11 +40,13 @@ class TopicForm extends React.Component {
               placeholder={`Select Topic`} />
             <button className="add-question-button-topic">Add Topic</button>
           </form>
+          <div className="topic-action-container">
           <TopicsFormList
             question={this.props.question}
             topics={this.props.topics}
             deleteTagging={this.props.deleteTagging} />
           <button className="add-question-button-done" onClick={this.handleClose}>Done</button>
+          </div>
       </div>
     );
   }

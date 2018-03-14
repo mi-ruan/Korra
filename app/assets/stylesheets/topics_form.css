@@ -57,7 +57,7 @@ div.add-topics {
 }
 
 .submit-new-topic {
-  position: relative;
+  position: absolute;
 }
 
 .tag-delete {
@@ -89,10 +89,10 @@ div.add-topics {
   align-items: flex-start;
   justify-content: flex-start;
   width: 30%;
-  bottom: 124px;
-  position: absolute;
-  height: 150px;
-  left: 240px;
+  position: relative;
+  height: 151px;
+  left: 1%;
+  top: 0%;
 }
 
 button.add-question-button-topic {
@@ -118,6 +118,21 @@ button.add-question-button-topic {
   border: 1px solid #1A63AD;
   background: #3E78AD;
   position: relative;
-  top: 255px;
-  right: 130px;
+  left: 82%;
+  bottom: 5%;
+}
+
+.topic-action-container {
+  display: flex;
+  justify-content: center;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 150px;
+  width: 700px;
+  font-weight: bolder;
+  align-items: flex-start;
+  position: relative;
+  top: 150px;
 }
