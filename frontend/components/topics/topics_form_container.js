@@ -6,7 +6,7 @@ import {closeModal} from '../../actions/modal_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     question: state.entities.questions[ownProps.question.id],
-    topics: Object.values(state.entities.topics),
+    topics: state.entities.topics,
   };
 };
 

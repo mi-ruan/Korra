@@ -74,11 +74,12 @@ div.add-topics {
   display: flex;
   justify-content: center;
   font-size: 12px;
+  font-weight: 300;
 }
 
 .all-item-tag {
   display: flex;
-  margin: 0 2px;
+  margin: 4px 2px;
   font-family: Arial;
   color: #808293;
   background: #EDEDF7;
@@ -88,4 +89,12 @@ div.add-topics {
 
 .all-item-tag:hover {
   background: #d0d0e8;
+}
+
+.topics-form-list {
+  display: flex;
+  flex-direction: column;
+  margin: 10 14px;
+  align-items: flex-start;
+  justify-content: flex-start;
 }

@@ -65,14 +65,14 @@
   font-size: 12px;
   font-weight: 500;
   color: #999999;
-  justify-content: space-around;
+  justify-content: flex-start;
   height: 20px;
   width: 30%;
   min-width: 50px;
-
 }
 
-time.datetime {
+.date-class > * {
+  margin-right: 10px;
 }
 
 .question-show-form > .main-question-form > .author-name {

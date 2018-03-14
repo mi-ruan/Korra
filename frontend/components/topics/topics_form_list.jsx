@@ -1,9 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class TopicsList extends React.Component {
+class TopicsFormList extends React.Component {
   constructor(props){
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleDelete() {
+
   }
 
   render() {
@@ -11,6 +16,9 @@ class TopicsList extends React.Component {
     const TopicItemMap = topicsArray.map((id) => {
       return (
         <div key={id} className="all-item-tag">
+        <h6 className="tag-delete"
+          onClick={this.handleDelete}
+        >X</h6>
           <Link to={`/topics/${id}`}
           className="topic-tags"
           >{this.props.topics[id].tag}</Link>
@@ -18,11 +26,11 @@ class TopicsList extends React.Component {
       );
     });
     return (
-      <div className="topics-form">
+      <div className="topics-form-list">
         {TopicItemMap}
       </div>
     );
   }
 }
 
-export default TopicsList;
+export default TopicsFormList;

@@ -1,5 +1,5 @@
 import React from 'react';
-import TopicsListContainer from './topics_list_container';
+import TopicsFormList from './topics_form_list';
 
 
 class TopicForm extends React.Component {
@@ -40,7 +40,7 @@ class TopicForm extends React.Component {
             onChange={this.updateTopic}
             value={this.state.newTopic}
             placeholder={`Select Topic`} />
-          <TopicsListContainer question={this.props.question} />
+          <TopicsFormList question={this.props.question} topics={this.props.topics} />
           <button className="add-question-button-create" onClick={this.handleSubmit}>Done</button>
         </form>
       </div>
