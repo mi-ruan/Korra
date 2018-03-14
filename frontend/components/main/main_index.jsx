@@ -3,6 +3,7 @@ import {Link, NavLink} from 'react-router-dom'
 import MainHeader from './main_header';
 import QuestionsContainer from '../questions/questions_container';
 import QuestionShowContainer from '../questions/question_show_container';
+import TopicShowContainer from '../topics/topic_show_container';
 import {Route, Switch} from 'react-router-dom';
 import HeaderModal from '../user_interface/header_modal';
 
@@ -14,6 +15,7 @@ const MainIndex = ({users, logout}) => {
         <HeaderModal />
         <Route exact path="/" component={QuestionsContainer} />
         <Route exact path ="/questions/:questionId" component={QuestionShowContainer} />
+        <Route exact path="/topics/:topicId" component={TopicShowContainer} />
       </main>
     </div>
   );

@@ -1,0 +1,46 @@
+.main-topics {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 65px;
+  width: 200px;
+  height: 360px;
+  left: 5%;
+  border: 2px solid lightgrey;
+  justify-content: center;
+}
+
+.topic-title {
+  font-weight: bold;
+  color: #B72128;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.popular-topic-list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.popular-topics {
+  margin: 2px;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.popular-topics:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.topic-title-show {
+  font-weight: bold;
+  color: #B72128;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

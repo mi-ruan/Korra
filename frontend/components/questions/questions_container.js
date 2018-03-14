@@ -11,6 +11,7 @@ const mapStateToProps = state => {
     questions: Object.values(state.entities.questions)
     .sort((a,b) => new Date(b.updated_at) > new Date(a.updated_at)),
     answers: getAnswersByQuestionId(state),
+    topics: Object.values(state.entities.topics),
     currentUserId: state.session.id,
     dropDownId: state.ui.dropDownForm.id || null
   };
