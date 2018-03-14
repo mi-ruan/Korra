@@ -8,24 +8,22 @@ class TopicForm extends React.Component {
       newTopic: '',
     };
     this.updateTopic = this.updateTopic.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.addTopics = this.addTopics.bind(this);
   }
 
-  handleKeyPress(e){
-    if(e.key === "Enter"){
-      this.props.createTopic(this.state.newTopic, this.props.question.id);
-      this.setState({newTopic: ''});
-      this.props.fetchQuestion(this.props.question.id);
-      e.preventDefault();
-    }
+
+
+  addTopics(e){
+    e.preventDefault();
+    this.props.createTagging(this.state.newTopic, this.props.question.id).then(() => this.setState({newTopic: ''}));
   }
 
   updateTopic(e) {
     this.setState({newTopic: e.target.value});
   }
 
-  handleSubmit(e){
+  handleClose(e){
     e.preventDefault();
     this.props.closeModal();
   }
@@ -33,16 +31,20 @@ class TopicForm extends React.Component {
   render() {
     return(
       <div className="modal-container">
-        <form className="submit-new-topic">
-          <input type="text"
-            className="submit-topic-text"
-            onKeyPress={this.handleKeyPress}
-            onChange={this.updateTopic}
-            value={this.state.newTopic}
-            placeholder={`Select Topic`} />
-          <TopicsFormList question={this.props.question} topics={this.props.topics} />
-          <button className="add-question-button-create" onClick={this.handleSubmit}>Done</button>
-        </form>
+          <form className="submit-new-topic" onSubmit={this.addTopics}>
+            <input type="text"
+              className="submit-topic-text"
+              onChange={this.updateTopic}
+              value={this.state.newTopic}
+              onSubmit={this.addTopics}
+              placeholder={`Select Topic`} />
+            <button className="add-question-button-topic">Add Topic</button>
+          </form>
+          <TopicsFormList
+            question={this.props.question}
+            topics={this.props.topics}
+            deleteTagging={this.props.deleteTagging} />
+          <button className="add-question-button-done" onClick={this.handleClose}>Done</button>
       </div>
     );
   }

@@ -17,7 +17,7 @@ div.topics-form {
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 2px;
+  top: 3px;
   right: 1px;
 }
 
@@ -26,15 +26,6 @@ div.topics-form {
   background: #DCDCE2;
 }
 
-.submit-topic-text {
-  margin-left: 15px;
-  width: 75%;
-  height: 22px;
-  font-size: 20px;
-  padding-left: 10px;
-  border: 1px solid grey;
-  border-radius: 2px;
-}
 
 .topic-tags {
   margin: 0 2px;
@@ -77,24 +68,56 @@ div.add-topics {
   font-weight: 300;
 }
 
-.all-item-tag {
-  display: flex;
-  margin: 4px 2px;
-  font-family: Arial;
-  color: #808293;
-  background: #EDEDF7;
-  align-items: center;
-  justify-content: center;
+.tag-delete:hover {
+  background: #d0d0e8;
 }
 
-.all-item-tag:hover {
-  background: #d0d0e8;
+.all-item-tag {
+  display: flex;
+  margin: 6px 2px;
+  font-family: Arial;
+  color: #808293;
+  background: #FFFFFE;
+  align-items: center;
+  justify-content: center;
 }
 
 .topics-form-list {
   display: flex;
   flex-direction: column;
-  margin: 10 14px;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: flex-start;
+  width: 30%;
+  bottom: 124px;
+  position: absolute;
+  height: 150px;
+  left: 240px;
+}
+
+button.add-question-button-topic {
+  border: 1px solid #1A63AD;
+  background: #3E78AD;
+  position: absolute;
+  bottom: 162px;
+  right: 30px;
+}
+
+.submit-topic-text {
+  margin-left: 15px;
+  width: 75%;
+  height: 22px;
+  font-size: 20px;
+  padding-left: 10px;
+  border: 1px solid grey;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 165px;
+}
+.add-question-button-done {
+  border: 1px solid #1A63AD;
+  background: #3E78AD;
+  position: relative;
+  top: 255px;
+  right: 130px;
 }

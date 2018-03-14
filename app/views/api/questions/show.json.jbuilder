@@ -18,9 +18,9 @@ json.users do
 end
 
 json.topics do
-  @question.topics.each do |topic|
+  Topic.all.each do |topic|
     json.set! topic.id do
       json.partial! 'api/topics/topic', topic: topic
     end
   end
-end  
+end

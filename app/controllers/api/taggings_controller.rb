@@ -1,10 +1,12 @@
 class Api::TaggingsController < ApplicationController
   def create
-    @taggings = Tagging.new(
-      {topic_id: params[:topicId],
-      question_id: params[:question_id]})
+    @topic = Topic.find_or_create_by({tag: params[:topic]})
+    @tagging = @topic.taggings.new(
+      {question_id: params[:question_id]})
     if @tagging.save
       render :show
+    else
+      render json: @tagging.errors.full_messages
     end
   end
 

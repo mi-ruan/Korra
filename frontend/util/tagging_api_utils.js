@@ -1,8 +1,8 @@
-export const createTagging = (topicId, questionId) => {
+export const createTagging = (topic, questionId) => {
   return $.ajax({
     url: `api/questions/${questionId}/taggings`,
     method: 'POST',
-    data: {topicId}
+    data: {topic}
   });
 };
 

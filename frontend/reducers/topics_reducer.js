@@ -26,15 +26,15 @@ const topicsReducer = (state = {}, action ) => {
       delete newState[action.topicId];
       return newState;
     case RECEIVE_TAGGING:
-      const newStateTag = merge({}, state);
+      const newStateTag = merge({}, state, {[action.topic.id]: action.topic});
       const arr = newStateTag[action.topicId].questionIds;
       arr.push(action.questionId);
       return newStateTag;
     case REMOVE_TAGGING:
       const newStateRT = merge({}, state);
-      const arrRT = newStateRT[action.TopicId].questionIds;
+      const arrRT = newStateRT[action.topicId].questionIds;
       const indexRT = arrRT.indexOf(action.questionId);
-      arrRT.splice(index,1);
+      arrRT.splice(indexRT,1);
       return newStateRT;
     default:
       return state;

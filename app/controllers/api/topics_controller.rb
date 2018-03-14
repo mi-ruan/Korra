@@ -7,10 +7,9 @@ class Api::TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params)
     if @topic.save
-      @tagging = Tagging.create({topic_id: @topic.id, question_id: params[:question_id]})
       render :show
     else
-      render 'api/users/show'
+      render json: @topic.errors.full_messages
     end
   end
 

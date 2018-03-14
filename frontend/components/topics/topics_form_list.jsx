@@ -1,6 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {deleteTagging} from '../../util/tagging_api_utils';
 
 class TopicsFormList extends React.Component {
   constructor(props){
@@ -10,21 +8,17 @@ class TopicsFormList extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    deleteTagging(e.target.id, this.props.question.id);
-
+    this.props.deleteTagging(parseInt(e.target.id), this.props.question.id);
   }
 
   render() {
     const topicsArray = this.props.question.topicIds;
-    const TopicItemMap = topicsArray.map((id) => {
+    const TopicItemMap = topicsArray.map((topic) => {
       return (
-        <div key={id} className="all-item-tag">
-        <button className="tag-delete"
-          onClick={this.handleDelete} id={id}
-        >X</button>
-          <Link to={`/topics/${id}`}
-          className="topic-tags"
-          >{this.props.topics[id].tag}</Link>
+        <div key={topic} className="all-item-tag">
+          <button className="tag-delete"
+            onClick={this.handleDelete} id={topic}>X</button>
+          <h5 className="topic-tags">{this.props.topics[topic].tag}</h5>
         </div>
       );
     });

@@ -67,8 +67,8 @@
   color: #999999;
   justify-content: flex-start;
   height: 20px;
-  width: 30%;
-  min-width: 50px;
+  width: 150px;
+  min-width: 40%;
 }
 
 .date-class > * {

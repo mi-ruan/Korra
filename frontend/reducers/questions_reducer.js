@@ -36,7 +36,7 @@ const questionsReducer = (state = {}, action) => {
       const newStateRT = merge({}, state);
       const arrRT = newStateRT[action.questionId].topicIds;
       const indexRT = arrRT.indexOf(action.topicId);
-      arrRT.splice(index,1);
+      arrRT.splice(indexRT,1);
       return newStateRT;
     default:
       return state;
