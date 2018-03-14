@@ -4,7 +4,7 @@
 }
 
 
-.main-questions{
+.main-questions, .topic-main-content{
   position: relative;
   top: 52px;
   display: flex;
@@ -16,14 +16,6 @@
   align-items: left;
 }
 
-div.topic-show-page {
-  width: 75%;
-  align-items: center;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 .main-question-form {
   display: flex;

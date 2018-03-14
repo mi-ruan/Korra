@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   const questions = getQuestionsByTopic(state, topic.id);
   return {
     topic,
+    topics: Object.values(state.entities.topics),
     questions,
     answers: getAnswersByQuestionId(state),
     users: Object.assign({}, state.entities.users),

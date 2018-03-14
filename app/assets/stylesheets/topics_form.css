@@ -149,3 +149,7 @@ button.add-question-button-topic {
 .topic-search-item:hover {
   cursor: pointer;
 }
+
+#ul.topics-list{
+  width: 100%;
+}

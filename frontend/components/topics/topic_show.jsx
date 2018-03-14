@@ -1,5 +1,6 @@
 import React from 'react';
 import QuestionItem from '../questions/question_item';
+import MainTopic from '../main/main_topic';
 
 class TopicShow extends React.Component {
   constructor(props){
@@ -28,10 +29,15 @@ class TopicShow extends React.Component {
     });
     return (
       <div className="topic-show-page">
-        <h3 className="topic-title-show">{this.props.topic.tag}</h3>
-        <ul>
-          {QuestionItems}
-        </ul>
+        <div className="main-topics">
+          <MainTopic topics={this.props.topics} />
+        </div>
+        <div className="topic-main-content">
+          <h3 className="topic-title-show">{this.props.topic.tag}</h3>
+          <ul id="topic-list">
+            {QuestionItems}
+          </ul>
+      </div>
       </div>
     );
   }
