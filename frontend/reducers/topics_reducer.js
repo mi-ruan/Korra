@@ -5,6 +5,10 @@ import {
   RECEIVE_TOPIC,
   REMOVE_TOPIC
 } from '../actions/topic_actions';
+import {
+  RECEIVE_TAGGING,
+  REMOVE_TAGGING
+} from '../actions/tagging_actions';
 
 const topicsReducer = (state = {}, action ) => {
   Object.freeze(state);
@@ -21,6 +25,17 @@ const topicsReducer = (state = {}, action ) => {
       const newState = merge({}, state);
       delete newState[action.topicId];
       return newState;
+    case RECEIVE_TAGGING:
+      const newStateTag = merge({}, state);
+      const arr = newStateTag[action.topicId].questionIds;
+      arr.push(action.questionId);
+      return newStateTag;
+    case REMOVE_TAGGING:
+      const newStateRT = merge({}, state);
+      const arrRT = newStateRT[action.TopicId].questionIds;
+      const indexRT = arrRT.indexOf(action.questionId);
+      arrRT.splice(index,1);
+      return newStateRT;
     default:
       return state;
   }

@@ -1,7 +1,6 @@
 import React from 'react';
 import TopicsFormList from './topics_form_list';
 
-
 class TopicForm extends React.Component {
   constructor(props){
     super(props);
@@ -17,6 +16,7 @@ class TopicForm extends React.Component {
     if(e.key === "Enter"){
       this.props.createTopic(this.state.newTopic, this.props.question.id);
       this.setState({newTopic: ''});
+      this.props.fetchQuestion(this.props.question.id);
       e.preventDefault();
     }
   }

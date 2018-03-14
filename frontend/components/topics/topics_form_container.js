@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import TopicsForm from './topics_form';
 import {createTopic} from '../../actions/topic_actions';
 import {closeModal} from '../../actions/modal_actions';
+import {fetchQuestion} from '../../actions/question_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -12,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    fetchQuestion: (id) => dispatch(fetchQuestion(id)),
     createTopic: (topic, questionId) => dispatch(createTopic(topic, questionId)),
     closeModal: () => dispatch(closeModal()),
   };

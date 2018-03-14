@@ -4,6 +4,7 @@ export const RECEIVE_TOPICS = "RECEIVE_TOPICS";
 export const RECEIVE_TOPIC = "RECEIVE_TOPIC";
 export const REMOVE_TOPIC = "REMOVE_TOPIC";
 
+
 export const receiveTopics = topics => {
   return {
     type: RECEIVE_TOPICS,
@@ -26,6 +27,7 @@ export const removeTopic = topicId => {
     topicId
   };
 };
+
 
 export const fetchTopics = () => {
   return (

@@ -70,7 +70,7 @@ div.add-topics {
 }
 
 .tag-delete {
-  margin: 0;
+  margin: 0 12px;
   display: flex;
   justify-content: center;
   font-size: 12px;
