@@ -8,7 +8,7 @@
   z-index: 2;
 }
 
-.question-search-list {
+.question-search-list, .topic-search-list {
   position: absolute;
   top: 35px;
   z-index: 7;
@@ -20,7 +20,7 @@
   position: relative;
 }
 
-.question-search-item, .question-search-item-no {
+.question-search-item, .question-search-item-no, .topic-search-item {
   display: flex;
   background: white;
   width: 300px;
@@ -30,7 +30,7 @@
   border: 1px solid lightgrey;
 }
 
-.question-search-item:hover {
+.question-search-item:hover, .topic-search-item:hover {
   text-decoration: underline;
   color: #94B0D0;
 }

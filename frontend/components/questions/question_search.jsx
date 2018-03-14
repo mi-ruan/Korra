@@ -26,11 +26,13 @@ class QuestionSearch extends React.Component {
     if (this.state.title.length === 0) {
       return matches;
     }
-    this.props.questions.forEach(question => {
-      if (question.title.toLowerCase().includes(this.state.title.toLowerCase())) {
-        matches.push(question);
+    const questions = this.props.questions;
+    for (let i = 0; i < questions.length; i++) {
+      if (questions[i].title.toLowerCase().includes(this.state.title.toLowerCase())) {
+        matches.push(questions[i]);
       }
-    });
+      if (matches.length > 10) break;
+    }
     if (matches.length === 0) {
       matches.push({title: 'No Results'});
     }

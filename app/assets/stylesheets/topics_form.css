@@ -136,3 +136,16 @@ button.add-question-button-topic {
   position: relative;
   top: 150px;
 }
+
+.topic-search-list {
+  top: 136px;
+}
+
+.topic-search-item {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;;
+}
+
+.topic-search-item:hover {
+  cursor: pointer;
+}
