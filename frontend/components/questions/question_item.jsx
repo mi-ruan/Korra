@@ -45,8 +45,10 @@ class QuestionItem extends React.Component {
   }
 
   handleDropDown(){
-    if(this.props.dropDownId === this.props.question.id){
+    if(this.props.dropDownQuestionId === this.props.question.id){
       return <DropDownForm />;
+    } else {
+      return this.handleAnswerItems();
     }
   }
 
@@ -64,6 +66,7 @@ class QuestionItem extends React.Component {
       }
     }
   }
+
 
   handleTopicItems() {
     return <TopicsListContainer question={this.props.question} />;
@@ -100,7 +103,7 @@ class QuestionItem extends React.Component {
       </div>
         <span className="create-form-footer">
           <div className="answer-button"
-            onClick={() => this.props.openDropDownForm('answerForm', this.props.question.id)}>
+            onClick={() => this.props.openDropDownForm('answerForm', this.props.question.id, null)}>
             <button className="fas fa-pencil-alt">Answer</button>
           </div>
           <span className="edit-delete">
@@ -109,7 +112,6 @@ class QuestionItem extends React.Component {
           </span>
         </span>
         <div className="drop-down">{this.handleDropDown()}</div>
-        {this.handleAnswerItems()}
       </div>
     );
   }

@@ -16,7 +16,7 @@ class AnswerItem extends React.Component {
   addEditButton(){
     if(this.props.currentUser.id === this.props.answer.user_id) {
       return(<button className="answer-edit"
-      onClick={() => this.props.openDropDownForm('updateForm', this.props.answer.id)}>
+      onClick={() => this.props.openDropDownForm('updateForm',this.props.question.id, this.props.answer.id)}>
       Edit</button>);
     }
   }
@@ -35,7 +35,7 @@ class AnswerItem extends React.Component {
   }
 
   handleDropDown(){
-    if(this.props.dropDownId === this.props.answer.id){
+    if(this.props.dropDownAnswerId === this.props.answer.id){
       return <DropDownForm />;
     }
   }

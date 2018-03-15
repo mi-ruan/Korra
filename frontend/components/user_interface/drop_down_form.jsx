@@ -4,17 +4,21 @@ import { connect } from 'react-redux';
 import AnswerFormContainer from '../answers/answer_form_container';
 import EditAnswerFormContainer from '../answers/edit_answer_form_container';
 
-function DropDownForm({dropDownForm, closeDropDownForm, dropDownFormId}) {
+function DropDownForm({dropDownForm, closeDropDownForm, dropDownFormQuestionId, dropDownFormAnswerId}) {
   if (!dropDownForm) {
     return null;
   }
   let component;
   switch (dropDownForm) {
     case 'answerForm':
-      component = <AnswerFormContainer question={{id: dropDownFormId}} />;
+      component = <AnswerFormContainer
+        questionId={dropDownFormQuestionId}
+        answerId={dropDownFormAnswerId} />;
       break;
     case 'updateForm':
-      component = <EditAnswerFormContainer question={{id: dropDownFormId}} />;
+      component = <EditAnswerFormContainer
+        questionId={dropDownFormQuestionId}
+        answerId={dropDownFormAnswerId} />;
       break;
     default:
       return null;
@@ -31,7 +35,8 @@ function DropDownForm({dropDownForm, closeDropDownForm, dropDownFormId}) {
 const mapStateToProps = state => {
   return {
     dropDownForm: state.ui.dropDownForm.type,
-    dropDownFormId: state.ui.dropDownForm.id
+    dropDownFormQuestionId: state.ui.dropDownForm.questionId,
+    dropDownFormAnswerId: state.ui.dropDownForm.answerId,
   };
 };
 

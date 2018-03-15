@@ -3,13 +3,17 @@ import { OPEN_DROP_DOWN_FORM,
 
 const defaultState = {
   type: null,
-  id: null
+  questionId: null,
+  answerId: null
 };
 
 export default function dropDownFormReducer(state = defaultState, action) {
   switch (action.type) {
     case OPEN_DROP_DOWN_FORM:
-      return Object.assign({}, {type: action.dropDownForm, id: action.id});
+      return Object.assign({},
+        {type: action.dropDownForm,
+        questionId: action.questionId,
+        answerId: action.answerId});
     case CLOSE_DROP_DOWN_FORM:
       return defaultState;
     default:

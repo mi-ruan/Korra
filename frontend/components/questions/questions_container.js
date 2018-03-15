@@ -13,7 +13,8 @@ const mapStateToProps = state => {
     answers: getAnswersByQuestionId(state),
     topics: Object.values(state.entities.topics),
     currentUserId: state.session.id,
-    dropDownId: state.ui.dropDownForm.id || null
+    dropDownQuestionId: state.ui.dropDownForm.questionId || null,
+    dropDownAnswerId: state.ui.dropDownForm.answerId || null,
   };
 };
 
@@ -21,7 +22,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchQuestions: () => dispatch(fetchQuestions()),
     openModal: (modal, id) => dispatch(openModal(modal, id)),
-    openDropDownForm: (dropDownForm, id) => dispatch(openDropDownForm(dropDownForm, id)),
+    openDropDownForm: (type, questionId, answerId) => dispatch(openDropDownForm(type,questionId, answerId)),
   };
 };
 

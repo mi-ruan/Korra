@@ -38,7 +38,7 @@ class AnswerForm extends React.Component {
     return(
       <div>
         <form className="answer-form" onSubmit={this.handleSubmit}>
-          <ReactQuill  className="answer-form-text"
+          <ReactQuill className="answer-form-text"
           onChange={this.updateBody}
           value={this.state.body}
           placeholder="Write your answer"></ReactQuill>

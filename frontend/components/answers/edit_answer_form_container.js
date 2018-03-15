@@ -4,10 +4,10 @@ import {updateAnswer} from '../../actions/answer_actions';
 import {closeDropDownForm} from '../../actions/drop_down_form_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const answer = state.entities.answers[ownProps.question.id] || {};
+  const answer = state.entities.answers[ownProps.answerId] || {};
   return({
     user: state.entities.users[state.session],
-    question: state.entities.questions[ownProps.question.id],
+    question: state.entities.questions[ownProps.questionId],
     answer,
     formType: 'updateForm',
   });
