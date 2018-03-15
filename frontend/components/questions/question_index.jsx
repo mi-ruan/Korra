@@ -2,6 +2,7 @@ import React from 'react';
 import QuestionItem from './question_item';
 import QuestionCreateContainer from './question_create_container';
 import MainTopic from '../main/main_topic';
+import AboutMe from '../main/about_me';
 
 class QuestionIndex extends React.Component {
   constructor(props){
@@ -30,7 +31,7 @@ class QuestionIndex extends React.Component {
         );
     });
     return(
-      <div>
+      <div className="main-main-content">
       <div className="main-topics">
         <MainTopic topics={this.props.topics} />
       </div>
@@ -48,6 +49,9 @@ class QuestionIndex extends React.Component {
           <ul>
             {QuestionItems}
           </ul>
+      </div>
+      <div className="about-me-holder">
+        <AboutMe />
       </div>
     </div>
     );

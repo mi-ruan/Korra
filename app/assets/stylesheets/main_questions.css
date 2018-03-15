@@ -1,9 +1,23 @@
 .main-content {
   align-content: center;
   height: 100vh;
+  width: 100%;
+  min-width: 1350px;
+}
+
+.main-main-content {
+  display: flex;
+  justify-content: center;
 }
 
 .main-questions, .topic-main-content{
+  position: relative;
+  top: 52px;
+  justify-content: flex-start;
+
+}
+
+.topic-main-content {
   position: relative;
   top: 52px;
   display: flex;
@@ -15,6 +29,7 @@
   align-items: left;
 }
 
+
 .main-question-form {
   display: flex;
   background: white;
@@ -22,6 +37,7 @@
   padding: 5px;
   margin: 1px 0px;
   flex-direction: column;
+  min-width: 700px;
 }
 
 .main-current-user {

@@ -16,9 +16,6 @@ div.topics-form {
   align-content: center;
   display: flex;
   flex-direction: row;
-  position: absolute;
-  top: 3px;
-  right: 1px;
 }
 
 
@@ -36,6 +33,7 @@ div.topics-form {
   border-radius: 2px;
   padding: 1px;
   font-family: Arial;
+  border: 1px solid #d8d8c4;
 }
 
 .topic-tags:hover {
@@ -44,11 +42,13 @@ div.topics-form {
 
 span.topics-list {
   display: flex;
-  width: 90%;
+  width: 100%;
+  justify-content: space-between;
 }
 
 div.add-topics {
   width: 15px;
+  height: 13px;
 }
 .submit-new-topic.topics-form {
   display: flex;

@@ -1,6 +1,7 @@
 import React from 'react';
 import QuestionItem from '../questions/question_item';
 import MainTopic from '../main/main_topic';
+import AboutMe from '../main/about_me';
 
 class TopicShow extends React.Component {
   constructor(props){
@@ -38,6 +39,9 @@ class TopicShow extends React.Component {
             {QuestionItems}
           </ul>
       </div>
+        <div className="about-me-holder-topic">
+          <AboutMe />
+        </div>
       </div>
     );
   }

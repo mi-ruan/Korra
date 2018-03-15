@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   width: 99.4%;
+  /* min-width: 700px; */
   background: white;
   border: 2px solid lightgrey;
   margin: 2px;

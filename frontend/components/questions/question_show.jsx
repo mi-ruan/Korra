@@ -1,6 +1,6 @@
 import React from 'react';
 import QuestionItem from './question_item';
-
+import AboutMe from '../main/about_me';
 
 class QuestionShow extends React.Component {
   constructor(props){
@@ -30,6 +30,9 @@ class QuestionShow extends React.Component {
           openDropDownForm = {openDropDownForm}
           dropDownId = {dropDownId}
           />
+        <div className="about-me-holder-show">
+          <AboutMe />
+        </div>
       </div>
     );
   }

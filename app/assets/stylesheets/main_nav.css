@@ -7,11 +7,11 @@
 header.nav-bar {
   position: fixed;
   top: 0%;
-  right: 0%;
   background: white;
   border-bottom: 3px solid lightgrey;
   height: 50px;
   width: 100%;
+  min-width: 750px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +23,7 @@ nav.full-nav {
   display: flex;
   background: white;
   width: 70%;
-  min-width: 60%;
+  min-width: 700px;
   height: 50px;
   justify-content: space-between;
   margin: 0 auto;
@@ -97,4 +97,30 @@ nav.right-nav {
   color: #BB2A27;
   background: lightgrey;
   box-shadow: 4 4 0 0 black;
+}
+
+.main-drop-down{
+  position: fixed;
+  top: 52px;
+  border: 2px solid lightgrey;
+  right: 25%;
+  background: white;
+  z-index: 7;
+  padding: 3px
+}
+
+.dropDown-background{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+button.header-profile {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: #b72128;
 }

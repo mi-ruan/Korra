@@ -7,7 +7,7 @@ const mapStateToProps = state => {
   return {
     question: {
       title: "",
-      user_id: state.session,
+      user_id: state.session.id,
     },
     formType: 'createForm'
   };

@@ -4,6 +4,7 @@
   position: fixed;
   top: 50px;
   width: 200px;
+  min-width: 200px;
   height: 360px;
   left: 5%;
   justify-content: flex-start;
