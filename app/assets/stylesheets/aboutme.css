@@ -1,0 +1,35 @@
+[class^="me-"]{
+  margin: 3px 0px;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'Bree', serif;
+}
+
+[class^="me-"]:hover{
+  color: #BB2A27;
+}
+
+#me-container{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 50px;
+  top: 60px;
+  width: 175px;
+  height: 300px;
+  margin: 0px;
+}
+
+.me-name{
+  font-weight: bold;
+}
+
+.fa-github, .fa-linkedin {
+  margin: 3px 0px;
+  font-size: 16px;
+}
+
+.fa-github:hover, .fa-linkedin:hover {
+  text-decoration: underline;
+  color: #6A9DE6;
+}

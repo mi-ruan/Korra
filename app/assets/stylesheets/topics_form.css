@@ -42,7 +42,7 @@ div.topics-form {
   background: #d0d0e8;
 }
 
-span.topics_list {
+span.topics-list {
   display: flex;
   width: 90%;
 }
@@ -139,6 +139,8 @@ button.add-question-button-topic {
 
 .topic-search-list {
   top: 136px;
+  width: 0px;
+  left: 40%;
 }
 
 .topic-search-item {

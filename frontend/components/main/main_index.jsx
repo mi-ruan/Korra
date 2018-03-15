@@ -6,6 +6,7 @@ import QuestionShowContainer from '../questions/question_show_container';
 import TopicShowContainer from '../topics/topic_show_container';
 import {Route, Switch} from 'react-router-dom';
 import HeaderModal from '../user_interface/header_modal';
+import AboutMe from './about_me';
 
 const MainIndex = ({users, logout}) => {
   return (
@@ -17,6 +18,7 @@ const MainIndex = ({users, logout}) => {
         <Route exact path ="/questions/:questionId" component={QuestionShowContainer} />
         <Route exact path="/topics/:topicId" component={TopicShowContainer} />
       </main>
+      <AboutMe />
     </div>
   );
 };
