@@ -8,7 +8,7 @@ class TopicShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchQuestions();
+    this.props.fetchTopic(this.props.topic.id);
   }
 
   render() {

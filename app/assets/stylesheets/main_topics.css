@@ -2,17 +2,16 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 65px;
+  top: 50px;
   width: 200px;
   height: 360px;
   left: 5%;
-  border: 2px solid lightgrey;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .topic-title {
-  font-weight: bold;
-  color: #B72128;
+  display: flex;
+  color: #888888;
   text-align: center;
   font-size: 30px;
   margin-top: 10px;
@@ -38,9 +37,15 @@
 
 .topic-title-show {
   font-weight: bold;
-  color: #B72128;
+  color: #262626;
   text-align: center;
+  font-family: 'Bree', serif;
   font-size: 30px;
   margin-top: 10px;
+  margin: 15px;
   margin-bottom: 20px;
+}
+
+ul {
+  width: 100%;
 }

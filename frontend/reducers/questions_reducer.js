@@ -1,5 +1,6 @@
 import {merge} from 'lodash';
 import {REMOVE_ANSWER} from '../actions/answer_actions';
+import {RECEIVE_TOPIC} from '../actions/topic_actions';
 import {
    RECEIVE_QUESTIONS,
    RECEIVE_QUESTION,
@@ -27,6 +28,8 @@ const questionsReducer = (state = {}, action) => {
       const index = arr.indexOf(action.answerId);
       arr.splice(index,1);
       return newStateAnswer;
+    case RECEIVE_TOPIC:
+      return merge({}, state, action.questions);
     case RECEIVE_TAGGING:
       const newStateTag = merge({}, state);
       const arrTag = newStateTag[action.questionId].topicIds;

@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import TopicShow from './topic_show';
 import {getAnswersByQuestionId, getQuestionsByTopic} from '../../reducers/selectors';
 import {fetchQuestions, updateQuestion, deleteQuestion} from '../../actions/question_actions';
+import {fetchTopic} from '../../actions/topic_actions';
 import {openModal} from '../../actions/modal_actions';
 import {openDropDownForm} from '../../actions/drop_down_form_actions';
 

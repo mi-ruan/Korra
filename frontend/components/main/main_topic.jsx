@@ -4,11 +4,11 @@ import {Link} from 'react-router-dom';
 const MainTopic = (props) => {
 
   const popularTopics = props.topics.sort((a,b) =>
-    a.questionIds.length > b.questionIds.length
+    b.questionIds.length - a.questionIds.length
   );
   const popularTen = popularTopics.slice(0,10);
   const popularTenLinks = popularTen.map(topic => {
-    return (<Link key={topic.id} to={`topics/${topic.id}`}
+    return (<Link key={topic.id} to={`/topics/${topic.id}`}
       className='popular-topics'>{topic.tag}</Link>
     );
   });
