@@ -16,8 +16,11 @@
   top: 60px;
   width: 175px;
   min-width: 175px;
-  height: 300px;
+  height: 250px;
   margin: 0px 100px;
+  background: white;
+  border: 2px solid #E2E2E2;
+  padding: 0px 10px;
 }
 
 .about-me-holder-show {

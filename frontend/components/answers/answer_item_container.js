@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
       question: state.entities.questions[answer.question_id],
       answer: answer,
       dropDownQuestionId: state.ui.dropDownForm.questionId || null,
-      dropDownAnswerId: state.ui.dropDownForm.AnswerId || null,
+      dropDownAnswerId: state.ui.dropDownForm.answerId || null,
   });
 };
 

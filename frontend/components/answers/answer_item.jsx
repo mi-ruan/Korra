@@ -37,6 +37,19 @@ class AnswerItem extends React.Component {
   handleDropDown(){
     if(this.props.dropDownAnswerId === this.props.answer.id){
       return <DropDownForm />;
+    } else {
+      return (
+        <div>
+        <ReactQuill readOnly
+        modules={{toolbar: null}}
+        value={this.props.answer.body}
+        className="answer-p"></ReactQuill>
+        <span className="edit-delete-answer">
+          {this.addEditButton()}
+          {this.addDeleteButton()}
+        </span>
+      </div>
+      );
     }
   }
 
@@ -55,11 +68,6 @@ class AnswerItem extends React.Component {
           <p>Updated: </p>
         <Moment fromNow>{this.props.answer.updated_at}</Moment>
         </div>
-        <ReactQuill readOnly modules={{toolbar: null}} value={this.props.answer.body} className="answer-p"></ReactQuill>
-        <span className="edit-delete-answer">
-          {this.addEditButton()}
-          {this.addDeleteButton()}
-        </span>
         <div className="drop-down">{this.handleDropDown()}</div>
       </div>
     );

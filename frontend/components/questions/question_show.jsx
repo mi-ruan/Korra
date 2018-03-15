@@ -14,9 +14,10 @@ class QuestionShow extends React.Component {
     if (this.props.question === undefined) {
       return <div></div>;
     }
-    const {question, user, currentUserId,
+    const {question, user, topics, currentUserId,
       fetchQuestion, updateQuestion, deleteQuestion,
-      openModal, openDropDownForm, dropDownId} = this.props;
+      openModal, openDropDownForm, dropDownQuestionId, dropDownAnswerId} = this.props;
+
     return(
       <div className="question-show-form">
         <QuestionItem
@@ -28,7 +29,9 @@ class QuestionShow extends React.Component {
           deleteQuestion = {deleteQuestion}
           openModal = {openModal}
           openDropDownForm = {openDropDownForm}
-          dropDownId = {dropDownId}
+          dropDownQuestionId = {dropDownQuestionId}
+          dropDownAnswerId = {dropDownAnswerId}
+          topics={topics}
           />
         <div className="about-me-holder-show">
           <AboutMe />

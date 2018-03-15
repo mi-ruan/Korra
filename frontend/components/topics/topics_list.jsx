@@ -6,8 +6,13 @@ class TopicsList extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    //this.props.fetchTopics();
+  }
+
   render() {
     const topicsArray = this.props.question.topicIds;
+
     const TopicItemMap = topicsArray.map((id) => {
       return (
         <div key={id} className="all-item-tag">

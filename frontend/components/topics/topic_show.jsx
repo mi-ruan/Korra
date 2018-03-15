@@ -9,10 +9,13 @@ class TopicShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchTopic(this.props.topic.id);
+    this.props.fetchTopic(this.props.match.params.topicId);
   }
 
   render() {
+    if (!this.props.topic) {
+      return null;
+    }
     const QuestionItems = this.props.questions.map((question, idx) => {
       const user = this.props.users[question.user_id];
       const currentUser = this.props.users[this.props.currentUserId];
@@ -25,7 +28,8 @@ class TopicShow extends React.Component {
         currentUserQuestion={this.props.currentUserId === user.id}
         openModal={this.props.openModal}
         openDropDownForm={this.props.openDropDownForm}
-        dropDownId={this.props.dropDownId}/>
+        dropDownQuestionId={this.props.dropDownQuestionId}
+        dropDownAnswerId={this.props.dropDownAnswerId}/>
         );
     });
     return (
