@@ -20,6 +20,7 @@ export const receiveQuestion = payload => {
     question: payload.question,
     answers: payload.answers,
     topics: payload.topics,
+    users: payload.users,
   };
 };
 

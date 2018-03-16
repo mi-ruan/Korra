@@ -29,11 +29,9 @@ json.answers do
 end
 
 json.topics do
-  @questions.each do |question|
-    question.topics.each do |topic|
-      json.set! topic.id do
-        json.partial! 'api/topics/topic', topic:topic
-      end
+  Topic.all.each do |topic|
+    json.set! topic.id do
+      json.partial! '/api/topics/topic', topic: topic
     end
   end
-end 
+end

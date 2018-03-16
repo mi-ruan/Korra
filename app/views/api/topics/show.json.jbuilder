@@ -1,5 +1,9 @@
-json.topic do
-  json.partial! 'api/topics/topic', topic: @topic
+json.topics do
+  Topic.all.each do |topic|
+    json.set! topic.id do
+      json.partial! 'topic', topic: topic
+    end
+  end
 end
 
 json.questions do

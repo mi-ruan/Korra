@@ -15,7 +15,7 @@ export const receiveTopics = topics => {
 export const receiveTopic = payload => {
   return {
     type: RECEIVE_TOPIC,
-    topic: payload.topic,
+    topics: payload.topics,
     questions: payload.questions,
     answers: payload.answers,
     users: payload.users

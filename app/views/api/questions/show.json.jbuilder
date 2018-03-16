@@ -15,6 +15,9 @@ json.users do
       json.partial! 'api/users/user', user:user
     end
   end
+  json.set! @question.user.id do
+    json.partial! 'api/users/user', user: @question.user
+  end
 end
 
 json.topics do
