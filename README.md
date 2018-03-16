@@ -1,5 +1,5 @@
 ![Korra](https://github.com/mi-ruan/Korra/blob/master/wiki/korra_logo.PNG)  
-[live-Website]: http://korrakorra.herokuapp.com
+[live-Website]: korrakorra.herokuapp.com
 
 <h5>
 Korra is a question and answer website that allows users to interact with each other by answering other users' questions. Users can post any questions they have on the websites and fellow users who know the answers can respond. Questions can also be tagged with topics and sorted by questions. New Topics can be created if the topic does not exist in the database. This allows users to sift through related questions. Users can also search for questions in the database if they are interested in a particular question.
