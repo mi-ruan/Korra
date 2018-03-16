@@ -14,7 +14,8 @@
   position: relative;
   top: 52px;
   justify-content: flex-start;
-
+  min-width: 50%;
+  width: 53%;
 }
 
 .topic-main-content {
@@ -28,7 +29,6 @@
   margin: 0 auto;
   align-items: left;
 }
-
 
 .main-question-form {
   display: flex;
