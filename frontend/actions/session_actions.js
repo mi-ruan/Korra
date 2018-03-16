@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/session_api_utils';
+import {closeDropDown} from './drop_down_actions';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
@@ -42,6 +43,9 @@ export const login = user => {
 };
 export const logout = () => dispatch => {
   return (APIUtil.logout()
-  .then(() => dispatch(logoutCurrentUser())),
-  errors => dispatch(receiveErrors(errors.responseJSON.errors)));
+  .then(() => {
+    dispatch(logoutCurrentUser());
+    return (dispatch(closeDropDown()));
+    }),
+    errors => dispatch(receiveErrors(errors.responseJSON.errors)));
 };
