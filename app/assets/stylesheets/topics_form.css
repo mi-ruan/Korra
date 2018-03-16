@@ -11,11 +11,12 @@ div.topics-form {
   font-size: 14px;
   margin: 0 12px;
   padding: 3px;
-  width: 12px;
+  width: 40px;
   font-family: 'Open Sans', sans-serif;
   align-content: center;
   display: flex;
   flex-direction: row;
+  height: 26px;
 }
 
 
@@ -46,10 +47,6 @@ span.topics-list {
   justify-content: space-between;
 }
 
-div.add-topics {
-  width: 15px;
-  height: 13px;
-}
 .submit-new-topic.topics-form {
   display: flex;
   flex-direction: column;

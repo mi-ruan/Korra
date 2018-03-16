@@ -77,7 +77,7 @@ class QuestionItem extends React.Component {
       return (
         <div className="add-topics">
             <button className="fas fa-pencil-alt"
-              onClick={() => this.props.openModal('topicsForm', this.props.question.id)}></button>
+              onClick={() => this.props.openModal('topicsForm', this.props.question.id)}>Add Topics</button>
         </div>
       );
     }
