@@ -19,7 +19,7 @@ Korra is a question and answer website that allows users to interact with each o
 ### Two Feature Examples
 
 ####  DropDownAnswerForm
-![DropDownAnswerForm](http://recordit.co/rnQDaJ4suw)  
+![DropDownAnswerForm](http://recordit.co/rnQDaJ4suw.gif)  
   <h5>
   This feature allows a form to appear directly below for the user to answer a specific question. When the answer is submitted, the form disappears and is replaced by the newly created answer.</h5>
   <h5>
@@ -28,8 +28,9 @@ Korra is a question and answer website that allows users to interact with each o
   <h5>
   The feature was solved by building a dropdown switch through the react-redux cycle that maintain the on and off state of the dropdown. The dropdown switch was also given question id and answer id tags that allowed the code to recognize what questions or answers is being answered or modified. The code was then placed in an if-else conditional to check whether display the form or answers depending on the dropdown switch coming from the frontend storage.  
   </h5>
+  
 ####  Taggings
-![Taggings](http://recordit.co/8kNaJH8bbf)  
+![Taggings](http://recordit.co/8kNaJH8bbf.gif)  
 
   <h5>
   This feature allows user to add topics to their questions. Topics already on the website are searched to find matching ones; and if the inputted topic is a new one, it is added to the database. Topics can also be "untagged" from the question and is no longer associated.
