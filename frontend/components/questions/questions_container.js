@@ -9,7 +9,7 @@ const mapStateToProps = state => {
   return {
     users: Object.assign({}, state.entities.users),
     questions: Object.values(state.entities.questions)
-    .sort((a,b) => new Date(b.updated_at) > new Date(a.updated_at)),
+    .sort((a,b) => new Date(b.updated_at) - new Date(a.updated_at)),
     answers: getAnswersByQuestionId(state),
     topics: Object.values(state.entities.topics),
     currentUserId: state.session.id,
