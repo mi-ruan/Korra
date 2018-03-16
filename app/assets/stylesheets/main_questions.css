@@ -63,6 +63,7 @@
   margin: 0 10px;
   font-family: 'Bree', serif;
   font-weight: bold;
+  overflow-wrap: break-word;
 }
 .question-title:hover {
   text-decoration: underline;
