@@ -1,6 +1,8 @@
 .create-form-footer {
   display: flex;
   justify-content: space-between;
+  height: 30px;
+  align-items: center;
 }
 
 .answer-button {
@@ -88,13 +90,18 @@
   display: flex;
   font-size: 12px;
   width: 30px;
+  background: white;
+  z-index: 7;
+  padding: 3px;
 }
 
 .answer-delete {
   display: flex;
   font-size: 12px;
-  width: 60px;
-
+  width: 40px;
+  background: white;
+  z-index: 7;
+  padding: 3px;
 }
 
 .answer-edit:hover {

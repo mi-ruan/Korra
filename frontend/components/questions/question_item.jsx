@@ -5,30 +5,22 @@ import DropDownForm from '../user_interface/drop_down_form';
 import AnswerItemContainer from '../answers/answer_item_container';
 import TopicsListContainer from '../topics/topics_list_container';
 import Moment from 'react-moment';
+import Dropdown, {DropdownTrigger, DropdownContent} from 'react-simple-dropdown';
 
 class QuestionItem extends React.Component {
   constructor(props){
     super(props);
-    this.addEditButton = this.addEditButton.bind(this);
     this.addDeleteButton = this.addDeleteButton.bind(this);
     this.fnDeleteQuestion = this.fnDeleteQuestion.bind(this);
     this.handleDropDown = this.handleDropDown.bind(this);
     this.handleAnswerItems = this.handleAnswerItems.bind(this);
     this.handleTopicItems = this.handleTopicItems.bind(this);
     this.handleAddTopic = this.handleAddTopic.bind(this);
+    this.handleEditDeleteDrop = this.handleEditDeleteDrop.bind(this);
     this.isQuestionShow = (this.props.location.pathname ===
       `/questions/${this.props.question.id}`);
   }
 
-  addEditButton(){
-    if(this.props.currentUserQuestion) {
-      return(
-          <button className="question-edit"
-            onClick={() => this.props.openModal('updateForm', this.props.question.id)}>
-            Edit</button>
-          );
-    }
-  }
 
   fnDeleteQuestion() {
     this.props.deleteQuestion(this.props.question.id)
@@ -36,13 +28,27 @@ class QuestionItem extends React.Component {
   }
 
   addDeleteButton(){
-    if(this.props.currentUserQuestion &&
-      this.isQuestionShow){
+    if(this.isQuestionShow){
       return (<button className="question-delete"
         onClick={this.fnDeleteQuestion}
         >Delete</button>);
     }
   }
+
+  handleEditDeleteDrop(){
+    if (this.props.currentUserQuestion) {
+      return (<Dropdown className="edit-delete" ref="dropdown">
+        <DropdownTrigger className="edit-delete">...</DropdownTrigger>
+        <DropdownContent>
+          <button className="question-edit"
+            onClick={() => this.props.openModal('updateForm', this.props.question.id)}>
+            Edit</button>
+          {this.addDeleteButton()}
+        </DropdownContent>
+      </Dropdown>);
+    }
+  }
+
 
   handleDropDown(){
     if(this.props.dropDownQuestionId === this.props.question.id){
@@ -106,10 +112,7 @@ class QuestionItem extends React.Component {
             onClick={() => this.props.openDropDownForm('answerForm', this.props.question.id, null)}>
             <button className="fas fa-pencil-alt">Answer</button>
           </div>
-          <span className="edit-delete">
-            {this.addEditButton()}
-            {this.addDeleteButton()}
-          </span>
+          {this.handleEditDeleteDrop()}
         </span>
         <div className="drop-down">{this.handleDropDown()}</div>
       </div>

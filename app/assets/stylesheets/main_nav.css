@@ -103,7 +103,6 @@ nav.right-nav {
   position: fixed;
   top: 52px;
   border: 2px solid lightgrey;
-  right: 23.4%;
   background: white;
   z-index: 7;
   padding: 3px
@@ -118,9 +117,13 @@ nav.right-nav {
   z-index: 1;
 }
 
-button.header-profile {
+.header-profile {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   color: #b72128;
+}
+
+.header-profile:hover {
+  cursor: pointer
 }

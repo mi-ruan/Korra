@@ -3,34 +3,37 @@ import DropDownForm from '../user_interface/drop_down_form';
 import {withRouter} from 'react-router-dom';
 import Moment from 'react-moment';
 import ReactQuill, {Quill, Mixin, Toolbar} from 'react-quill';
+import Dropdown, {DropdownTrigger, DropdownContent} from 'react-simple-dropdown';
+
 
 class AnswerItem extends React.Component {
   constructor(props){
     super(props);
-    this.addDeleteButton = this.addDeleteButton.bind(this);
     this.handleDropDown = this.handleDropDown.bind(this);
-    this.addEditButton = this.addEditButton.bind(this);
     this.fnDeleteAnswer = this.fnDeleteAnswer.bind(this);
+    this.handleEditDeleteDrop = this.handleEditDeleteDrop.bind(this);
   }
 
-  addEditButton(){
-    if(this.props.currentUser.id === this.props.answer.user_id) {
-      return(<button className="answer-edit"
-      onClick={() => this.props.openDropDownForm('updateForm',this.props.question.id, this.props.answer.id)}>
-      Edit</button>);
-    }
-  }
 
   fnDeleteAnswer() {
     this.props.deleteAnswer(this.props.answer.id)
     .then(()=> this.props.fetchQuestions());
   }
 
-  addDeleteButton(){
-    if(this.props.answer.user_id === this.props.currentUser.id){
-      return (<button className="answer-delete"
-        onClick={this.fnDeleteAnswer}
-        >Delete Answer</button>);
+
+  handleEditDeleteDrop() {
+    if (this.props.answer.user_id === this.props.currentUser.id) {
+      return (<Dropdown className="edit-delete" ref="dropdown">
+        <DropdownTrigger className="edit-delete">...</DropdownTrigger>
+        <DropdownContent>
+          <button className="answer-edit"
+          onClick={() => this.props.openDropDownForm('updateForm',this.props.question.id, this.props.answer.id)}>
+          Edit</button>
+          <button className="answer-delete"
+            onClick={this.fnDeleteAnswer}
+            >Delete Answer</button>
+        </DropdownContent>
+      </Dropdown>);
     }
   }
 
@@ -45,8 +48,7 @@ class AnswerItem extends React.Component {
         value={this.props.answer.body}
         className="answer-p"></ReactQuill>
         <span className="edit-delete-answer">
-          {this.addEditButton()}
-          {this.addDeleteButton()}
+          {this.handleEditDeleteDrop()}
         </span>
       </div>
       );

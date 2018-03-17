@@ -3,6 +3,7 @@ import {Link, NavLink} from 'react-router-dom';
 import {openModal} from '../../actions/modal_actions';
 import {openDropDown} from '../../actions/drop_down_actions';
 import QuestionSearchContainer from '../questions/question_search_container';
+import MainProfile from './main_profile';
 
 const mainHeader = ({currentUser, logout}) => {
   return (
@@ -16,8 +17,7 @@ const mainHeader = ({currentUser, logout}) => {
         </nav>
         <nav className="right-nav">
           <QuestionSearchContainer />
-          <button className="header-profile"
-            onClick={() => dispatch(openDropDown('profile'))}>{currentUser.username}</button>
+          <MainProfile currentUser={currentUser} logout={logout} />
           <button className="add-question-button-nav"
           onClick={() => dispatch(openModal('createForm'))}>Add Question</button>
         </nav>
