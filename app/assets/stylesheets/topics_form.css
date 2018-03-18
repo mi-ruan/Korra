@@ -33,7 +33,7 @@ div.topics-form {
   font-weight: 500;
   border-radius: 2px;
   padding: 1px;
-  font-family: Arial;
+  font-family: 'Lato', sans-serif;
   border: 1px solid #d8d8c4;
 }
 
@@ -72,7 +72,7 @@ span.topics-list {
 .all-item-tag {
   display: flex;
   margin: 6px 2px;
-  font-family: Arial;
+  font-family: 'Lato', sans-serif;
   color: #808293;
   background: #FFFFFE;
   align-items: center;

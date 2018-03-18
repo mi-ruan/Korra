@@ -1,6 +1,5 @@
 .session-page {
-  background-image: linear-gradient(to top,rgba(145,0,0,0.5), rgba(255,155,155,0.5)),
-    url('http://i.imgur.com/Pj5UfXy.jpg');
+  background-image: url('http://i.imgur.com/Pj5UfXy.jpg');
   height: 100vh;
   background-size: cover;
 }

@@ -68,7 +68,7 @@
   font-size: 18px;
   line-height: 1;
   cursor: pointer;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
   color: grey;
 }
 
@@ -83,7 +83,7 @@
   text-align: center;
   width: 100px;
   border-radius: 3px;
-  font-family: Arial;
+  font-family: 'Lato', sans-serif;
 }
 
 .add-question-button-create {
