@@ -1,5 +1,11 @@
 {
   "name": "Korra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "directories": {
+  "test": "test"
+  },
   "private": true,
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -11,19 +17,21 @@
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.2.0",
-    "react-hover": "^1.3.2",
     "react-moment": "^0.7.0",
     "react-quill": "^1.2.6",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-simple-dropdown": "^3.2.0",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "webpack": "^3.11.0"
   },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
+  },
   "scripts": {
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "webpack": "webpack --watch"
   },
   "engines": {
     "node": "6.7.0",
