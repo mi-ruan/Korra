@@ -90,9 +90,6 @@ class QuestionItem extends React.Component {
   }
 
   render() {
-    // let date = new Date(this.props.question.updated_at);
-    // date = date.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
-            // <h6 className="date-class">Updated: {date}</h6>
     return(
       <div className="main-question-form">
         <span className="topics-list">

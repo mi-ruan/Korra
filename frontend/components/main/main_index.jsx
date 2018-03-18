@@ -22,6 +22,5 @@ const MainIndex = ({users, currentUser, logout}) => {
   );
 };
 
-// <NavLink to="/answer" className="tabs-answer" activeClassName="selected" >Answer</NavLink>
 
 export default MainIndex;

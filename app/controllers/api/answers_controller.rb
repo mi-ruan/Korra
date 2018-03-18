@@ -7,7 +7,7 @@ class Api::AnswersController < ApplicationController
     if @answer.save
       render :show
     else
-      render 'api/users/show'
+      render json: {errors: @answer.errors.full_messages}, status: 401
     end
   end
 
@@ -20,7 +20,7 @@ class Api::AnswersController < ApplicationController
     if @answer.update(answer_params)
       render :show
     else
-      render 'api/users/show'
+      render json: {errors: @answer.errors.full_messages}, status: 401
     end
   end
 
