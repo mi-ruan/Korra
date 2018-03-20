@@ -19,6 +19,9 @@ class QuestionSearch extends React.Component {
   }
 
   updateTitle(e){
+    if (!this.props.modalOn){
+      dispatch(openHeaderModal('questionSearchForm', 1));
+    }
     this.setState({title: e.target.value});
   }
 
