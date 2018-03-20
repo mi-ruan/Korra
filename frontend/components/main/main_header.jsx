@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import {openModal} from '../../actions/modal_actions';
-import {openDropDown} from '../../actions/drop_down_actions';
 import QuestionSearchContainer from '../questions/question_search_container';
 import MainProfile from './main_profile';
 

@@ -15,6 +15,7 @@ class QuestionSearch extends React.Component {
     this.resetSearch = this.resetSearch.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.matches = this.matches.bind(this);
+    this.handleDropDown = this.handleDropDown.bind(this);
   }
 
   updateTitle(e){
@@ -53,6 +54,28 @@ class QuestionSearch extends React.Component {
     }
   }
 
+  handleDropDown(){
+    if(this.props.modalOn) {
+      let results = this.matches().map((result, i) => {
+        if (result.id) {
+          return (
+            <Link to={`/questions/${result.id}`} key={i}  className='question-search-item'
+              onClick={this.resetSearch}>{result.title}</Link>
+          );
+        } else {
+          return <li key='result' className='question-search-item-no'>{result.title}</li>;
+        }
+      });
+      return (
+        <ReactCSSTransitionGroup
+          transitionName='auto'
+          transitionEnterTimeout={100}
+          transitionLeaveTimeout={100}>
+        {results}
+        </ReactCSSTransitionGroup>
+      )
+    }
+  }
 
   selectQuestion(e) {
     let question = e.currentTarget.innerText;
@@ -66,32 +89,18 @@ class QuestionSearch extends React.Component {
   }
 
   render() {
-    let results = this.matches().map((result, i) => {
-      if (result.id) {
-        return (
-          <Link to={`/questions/${result.id}`} key={i}  className='question-search-item'
-            onClick={this.resetSearch}>{result.title}</Link>
-        );
-      } else {
-        return <li key='result' className='question-search-item-no'>{result.title}</li>;
-      }
-    });
+
     return(
       <div className="question-search-div">
         <form onKeyPress={this.handleKeyPress}>
           <input type="text" className="question-search"
             placeholder={`\uD83D\uDD0D Search Quora`}
-            onClick={() => dispatch(openHeaderModal('questionSearchForm'))}
+            onClick={() => dispatch(openHeaderModal('questionSearchForm', 1))}
             onChange={this.updateTitle}
             value={this.state.title} />
         </form>
         <ul className="question-search-list">
-          <ReactCSSTransitionGroup
-            transitionName='auto'
-            transitionEnterTimeout={100}
-            transitionLeaveTimeout={100}>
-          {results}
-          </ReactCSSTransitionGroup>
+          {this.handleDropDown()}
         </ul>
       </div>
     );

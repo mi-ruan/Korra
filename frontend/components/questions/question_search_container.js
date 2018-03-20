@@ -6,7 +6,8 @@ import {closeHeaderModal} from '../../actions/header_modal_actions';
 
 const mapStateToProps = state => {
   return({
-    questions: Object.values(state.entities.questions)
+    questions: Object.values(state.entities.questions),
+    modalOn: state.ui.headerModal.id
   });
 };
 

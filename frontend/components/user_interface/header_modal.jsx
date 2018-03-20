@@ -17,7 +17,7 @@ function HeaderModal({HeaderModal, closeHeaderModal, HeaderModalId}) {
   }
 
   return (
-    <div id="header-modal-background" onClick={e => e.stopPropagation()}>
+    <div id="header-modal-background" onClick={closeHeaderModal}>
       <div className="header-modal-child" onClick={e => e.stopPropagation()}>
       </div>
     </div>
