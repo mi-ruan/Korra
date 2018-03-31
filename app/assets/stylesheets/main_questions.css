@@ -19,7 +19,7 @@
 
 .topic-main-content {
   position: relative;
-  top: 52px;
+  top: 56px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -47,14 +47,6 @@
 
 .main-questions > ul {
   width: 100%;
-}
-
-.question-show-form {
-  position: relative;
-  margin-top: 60px;
-  margin-left: 20%;
-  width: 40%;
-  font-size: 25px;
 }
 
 .question-title {
@@ -97,6 +89,16 @@
 
 .question-show-form > .main-question-form {
   width: 100%;
+  margin-top: 30px;
+}
+
+.question-show-form {
+  display: flex;
+  position: relative;
+  margin-top: 60px;
+  margin-left: 20%;
+  width: 40%;
+  font-size: 25px;
 }
 
 .edit-delete {
