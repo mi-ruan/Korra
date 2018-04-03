@@ -6,7 +6,7 @@ const AboutMe = () => {
     <div id="me-container">
       <h6 className='me-web'>Website Created By: </h6>
       <h6 className='me-name'>Michael Ruan</h6>
-      <h6 className='me-clone'>Korra is a clone of the website, Quora.</h6>
+      <h6 className='me-clone'>Korra is inspired by the website, Quora.</h6>
       <h6 className="me-disclaimer">
       Korra is a non-profit website created for coding experience.</h6>
       <h6 className='me-reach'>You can found out more about me at:</h6>

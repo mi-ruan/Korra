@@ -10,6 +10,10 @@
   justify-content: flex-start;
 }
 
+.topic-show-page {
+  background: #FAFAFA; 
+}
+
 .topic-title {
   display: flex;
   color: #888888;

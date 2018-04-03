@@ -128,6 +128,7 @@ button.add-question-button-topic {
   justify-content: center;
   height: 150px;
   width: 700px;
+  border-radius: 20px;
   font-weight: bolder;
   align-items: flex-start;
   position: relative;

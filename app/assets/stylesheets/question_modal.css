@@ -45,7 +45,7 @@
   justify-content: center;
   height: 300px;
   width: 700px;
-  border-radius: 5px;
+  border-radius: 20px;
   border: 1px solid grey;
   font-weight: bolder;
   align-items: flex-start;
@@ -127,7 +127,7 @@ span.update-buttons {
 
 form.question-create-form-modal {
   position: fixed;
-  top: 0;
+  top: 10px;
   width: 700px;
   z-index: 100;
 }
