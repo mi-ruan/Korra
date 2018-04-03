@@ -30,7 +30,7 @@
 
 .about-me-holder-topic {
   display: flex;
-  justify-content: flex-end;
+  margin: 80%;
 }
 
 .me-name{

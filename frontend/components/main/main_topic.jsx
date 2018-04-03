@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const MainTopic = (props) => {
 
   const popularTopics = props.topics.sort((a,b) =>
-    b.questionIds.length - a.questionIds.length
+    b.questionIds.length - a.questionIds.length || a.tag.localeCompare(b.tag)
   );
   const popularTen = popularTopics.slice(0,10);
   const popularTenLinks = popularTen.map(topic => {
