@@ -8,6 +8,8 @@
   display: flex;
   justify-content: center;
   background: #FAFAFA;
+  margin-top: 35px;
+  max-height: 100%;
 }
 
 .main-questions, .topic-main-content{
@@ -20,7 +22,7 @@
 
 .topic-main-content {
   position: relative;
-  top: 56px;
+  top: 23px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
