@@ -35,9 +35,13 @@ html, body {
   height: 100%;
 }
 
- ul {
-   list-style: none;
- }
+body {
+  background-color: #FAFAFA;
+}
+
+ul {
+ list-style: none;
+}
 
 button, input[type="submit"] {
   cursor: pointer;
