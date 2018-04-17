@@ -9,7 +9,7 @@ const AboutMe = () => {
       <h6 className='me-clone'>Korra is inspired by the website, Quora.</h6>
       <h6 className="me-disclaimer">
       Korra is a non-profit website created for coding experience.</h6>
-      <h6 className='me-reach'>You can found out more about me at:</h6>
+      <h6 className='me-reach'>You can find out more about me at:</h6>
       <a href="https://github.com/mi-ruan/"
       className="fab fa-github">Github</a>
       <a href="https://www.linkedin.com/in/michael-ruan-3051a994/"
