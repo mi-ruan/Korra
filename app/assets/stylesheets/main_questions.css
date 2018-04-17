@@ -34,11 +34,13 @@
 .main-question-form {
   display: flex;
   background: white;
-  border: 2px solid lightgrey;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
   padding: 5px;
   margin: 1px 0px;
   flex-direction: column;
   min-width: 700px;
+  margin-top: 10px;
 }
 
 .main-current-user {
@@ -54,7 +56,8 @@
 .question-title {
   display: flex;
   margin: 0 10px;
-  font-family: 'Bree', serif;
+  font-family: Georgia;
+  color: #262626;
   font-weight: bold;
   overflow-wrap: break-word;
 }

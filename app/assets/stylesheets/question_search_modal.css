@@ -13,10 +13,17 @@
   z-index: 7;
   display: flex;
   flex-direction: column;
+  top: 40px;
+  left: 18px;
 }
 
 .question-search-div {
+  display: flex;
   position: relative;
+  align-items: center;
+  border: 1px solid lightgrey;
+  box-shadow: rgba(200, 200, 200, 0.3) 0px 1px 1px 0px inset;
+  margin-right: 30px;
 }
 
 .question-search-item, .question-search-item-no, .topic-search-item {

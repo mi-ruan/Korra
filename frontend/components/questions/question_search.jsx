@@ -95,9 +95,10 @@ class QuestionSearch extends React.Component {
 
     return(
       <div className="question-search-div">
+        <i className="fas fa-search"></i>
         <form onKeyPress={this.handleKeyPress}>
           <input type="text" className="question-search"
-            placeholder={` \uD83D\uDD0D  Search Quora`}
+            placeholder={`Search Quora`}
             onClick={() => dispatch(openHeaderModal('questionSearchForm', 1))}
             onChange={this.updateTitle}
             value={this.state.title} />

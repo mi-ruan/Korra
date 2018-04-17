@@ -8,19 +8,23 @@
   width: 100%;
   min-width: 700px;
   background: white;
-  border: 2px solid lightgrey;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
   margin: 2px;
   height: 100%;
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
+  box-sizing: border-box;
 }
 
 .question-create-form {
+  margin-top: 10px;
   margin-left: 15px;
   width: 75%;
   height: 30%;
   font-size: 20px;
   font-weight: bold;
+  font-family: Georgia;
   overflow-wrap: break-word;
   resize: none;
 }
@@ -58,7 +62,6 @@
   z-index: 8;
 }
 
-
 .closeX {
   position: absolute;
   top: 10px;
@@ -80,8 +83,9 @@
   font-size: 14px;
   text-align: center;
   width: 100px;
+  font-weight: 500;
   border-radius: 3px;
-  font-family: 'Lato', sans-serif;
+  font-family: Helvetica;
 }
 
 .add-question-button-create {

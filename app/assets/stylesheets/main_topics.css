@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 50px;
+  top: 85px;
   width: 200px;
   min-width: 200px;
   height: 360px;
   left: 5%;
   justify-content: flex-start;
+  text-align: left;
 }
 
 .topic-show-page {
@@ -17,35 +18,36 @@
 
 .topic-title {
   display: flex;
-  color: #888888;
-  text-align: center;
-  font-size: 30px;
+  color: #333;
+  font-weight: 500;
+  font-family: Helvetica;
+  font-size: 15px;
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .popular-topic-list {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
 }
 
 .popular-topics {
-  margin: 2px;
+  color: #666;
+  margin: 5px;
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Helvetica;
 }
 
 .popular-topics:hover {
-  text-decoration: underline;
-  font-weight: bold;
+  color: #2b6dad;
 }
 
 .topic-title-show {
   font-weight: bold;
   color: #262626;
   text-align: center;
-  font-family: 'Bree', serif;
+  font-family: Georgia;
   font-size: 30px;
   margin-top: 10px;
   margin: 15px;
