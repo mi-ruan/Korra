@@ -93,17 +93,14 @@ nav.right-nav {
 
 .logout-button {
   font-family: Georgia;
-  font-size: 16px;
-  color: #584848;
+  font-size: 12px;
   border-radius: 5px;
-  padding: 2px;
   text-align: center;
 }
 
 .logout-button:hover {
   color: #BB2A27;
   background: lightgrey;
-  box-shadow: 4 4 0 0 black;
 }
 
 .main-drop-down{
@@ -129,8 +126,4 @@ nav.right-nav {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   color: #b72128;
-}
-
-.header-profile:hover {
-  cursor: pointer
 }

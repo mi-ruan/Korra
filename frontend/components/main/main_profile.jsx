@@ -9,16 +9,11 @@ class MainProfile extends React.Component {
 
   render() {
     return (
-      <Dropdown className="main-dropdown" ref="dropdown">
-        <DropdownTrigger className="header-profile" >
-        {this.props.currentUser.username}</DropdownTrigger>
-        <DropdownContent>
-        <div className='main-drop-down'>
-          <button className="logout-button"
-            onClick={() => this.props.logout()}>Log Out</button>
-        </div>
-        </DropdownContent>
-    </Dropdown>
+      <div className = "header-profile">
+        <div>{this.props.currentUser.username}</div>
+        <button className="logout-button"
+          onClick={() => this.props.logout()}>Log Out</button>
+      </div>
     );
   }
 };

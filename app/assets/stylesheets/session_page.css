@@ -1,7 +1,20 @@
 .session-page {
-  background-image: url('http://i.imgur.com/Pj5UfXy.jpg');
+  background-image: url('http://globalmedicalco.com/photos/globalmedicalco/1/121.jpg');
+  animation: slideshow 20s infinite;
   height: 100vh;
   background-size: cover;
+}
+
+@keyframes slideshow {
+  0% {
+    background-image: url('http://globalmedicalco.com/photos/globalmedicalco/1/121.jpg');
+  }
+  30% {
+    background-image: url('http://wlpapers.com/images/colorful-clouds-in-the-sky-digitalart-nature-1.jpg');
+  }
+  60% {
+    background-image: url('http://wall2born.com/data/out/94/image-45823354-hd-image-backgrounds.jpg');
+  }
 }
 
 .session {
@@ -30,7 +43,7 @@
 }
 
 .session-form label {
-  color: #aaa;
+  color: #4c4a4a;
 }
 
 
@@ -55,7 +68,7 @@ span#signup > .session-submit ,
 span#login > .session-submit,
 .session-demo > .demo-button {
   font-weight: bold;
-  background-color: #9CBBD5;
+  background-color: #85accc;
   color: white;
   padding: 5px;
 }
