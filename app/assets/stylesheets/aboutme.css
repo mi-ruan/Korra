@@ -17,7 +17,7 @@
   width: 175px;
   min-width: 175px;
   height: 230px;
-  margin: 0px 50px;
+  margin-left: 65px;
   margin-top: 10px;
   background: white;
   border: 1px solid lightgrey;
@@ -47,4 +47,19 @@
 .fa-github:hover, .fa-linkedin:hover {
   text-decoration: underline;
   color: #6A9DE6;
+}
+
+@media only screen and (max-width: 1250px) {
+  div.about-me-holder {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  div.main-topics {
+    display: none;
+  }
+  div.main-main-content {
+    justify-content: flex-start;
+  }
 }
