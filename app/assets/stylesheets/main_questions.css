@@ -15,7 +15,6 @@
   position: relative;
   top: 52px;
   justify-content: flex-start;
-  min-width: 50%;
   width: 53%;
 }
 
@@ -26,9 +25,7 @@
   justify-content: flex-start;
   flex-direction: column;
   width: 50%;
-  min-width: 50%;
   margin: 0 auto;
-  align-items: left;
 }
 
 .main-question-form {
@@ -39,8 +36,10 @@
   padding: 5px;
   margin: 1px 0px;
   flex-direction: column;
-  min-width: 700px;
   margin-top: 10px;
+  width: 100%;
+  min-width: 650px;
+  box-sizing: border-box;
 }
 
 .main-current-user {

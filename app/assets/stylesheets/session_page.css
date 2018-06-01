@@ -6,7 +6,7 @@
 }
 
 @keyframes slideshow {
-  0% {
+  0%, 100% {
     background-image: url('http://globalmedicalco.com/photos/globalmedicalco/1/121.jpg');
   }
   30% {

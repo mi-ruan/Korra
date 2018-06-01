@@ -15,7 +15,6 @@
   position: fixed;
   top: 77px;
   width: 175px;
-  min-width: 175px;
   height: 230px;
   margin-left: 65px;
   margin-top: 10px;
@@ -50,7 +49,7 @@
 }
 
 @media only screen and (max-width: 1250px) {
-  div.about-me-holder {
+  div.about-me-holder, div.about-me-holder-topic, div.about-me-holder-show{
     display: none;
   }
 }
