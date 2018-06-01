@@ -1,0 +1,24 @@
+@media only screen and (max-width: 1250px) {
+  div.about-me-holder, div.about-me-holder-topic, div.about-me-holder-show{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  div.main-topics {
+    position: relative;
+    align-items: center;
+    top: 42px;
+  }
+  div.main-main-content {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  div.topic-main-content {
+    top: 30px;
+    margin: 0;
+  }
+  div.question-show-form {
+    margin-left: 5%
+  }
+}

@@ -47,18 +47,3 @@
   text-decoration: underline;
   color: #6A9DE6;
 }
-
-@media only screen and (max-width: 1250px) {
-  div.about-me-holder, div.about-me-holder-topic, div.about-me-holder-show{
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  div.main-topics {
-    display: none;
-  }
-  div.main-main-content {
-    justify-content: flex-start;
-  }
-}
