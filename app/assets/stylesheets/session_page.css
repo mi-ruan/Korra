@@ -1,5 +1,5 @@
 .session-page {
-  background-image: url('http://globalmedicalco.com/photos/globalmedicalco/1/121.jpg');
+  background-image: url(space.jpg);
   animation: slideshow 20s infinite;
   height: 100vh;
   background-size: cover;
@@ -7,13 +7,13 @@
 
 @keyframes slideshow {
   0%, 100% {
-    background-image: url('http://globalmedicalco.com/photos/globalmedicalco/1/121.jpg');
+    background-image: url(space.jpg);
   }
   30% {
-    background-image: url('http://wlpapers.com/images/colorful-clouds-in-the-sky-digitalart-nature-1.jpg');
+    background-image: url(background.jpg);
   }
   60% {
-    background-image: url('http://wall2born.com/data/out/94/image-45823354-hd-image-backgrounds.jpg');
+    background-image: url(autumn.jpg);
   }
 }
 
