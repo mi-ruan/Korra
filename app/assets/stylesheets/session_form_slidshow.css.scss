@@ -1,0 +1,18 @@
+.session-page {
+  background: asset_url('space.jpg');
+  animation: slideshow 20s infinite;
+  height: 100vh;
+  background-size: cover;
+}
+
+@keyframes slideshow {
+  0%, 100% {
+    background: asset_url('space.jpg');
+  }
+  30% {
+    background: asset_url('background.jpg');
+  }
+  60% {
+    background: asset_url('autumn.jpg');
+  }
+}
